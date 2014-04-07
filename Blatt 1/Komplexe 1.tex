@@ -116,6 +116,54 @@ Die entsprechenden Real- und Imaginärteile ergeben sich durch direktes ablesen.
 
 
 
+\section{(Betrag und Argument)}
+Es ist
+\[
+ |1+3i| = \sqrt{1+3^2} = \sqrt{10} \text{ und } \arg (1+3i) = \arctan 3.
+\]
+Wegen der $2\pi$-Periodizität der Funktion $\R \to \C, t \mapsto e^{it}$ ist
+\begin{align*}
+ z_1
+ &= (1+i)^9 - (1-i)^9
+ = \left(\sqrt{2}e^{i\pi/4}\right)^9 - \left(\sqrt{2}e^{-i\pi/4}\right)^9 \\
+ &= \sqrt{2}^9 (e^{i\pi/4}-e^{i\pi/4})
+ = 16 \sqrt{2} ((1+i)-(1-i)) \\
+ &= 32 \sqrt{2} i,
+\end{align*}
+also
+\[
+ |z_1| = 32\sqrt{2} \text{ und } \arg z_1 = \frac{\pi}{2}.
+\]
+Da $i^2 = -1$ ist $ z_2 = i^{2014} = -1$, also
+\[
+ |z_2| = 1 \text{ und } \arg z_2 = \pi.
+\]
+Für $z_3 = \frac{1+ia}{1-ia}$ ist
+\[
+ \left|z_3\right|
+ = \frac{|1+ia|}{|1-ia|}
+ = 1,
+\]
+und da
+\[
+ \arg (1+ia) = \arctan a \text{ und } \arg (1-ia) = \arctan -a = - \arctan a.
+\]
+ist
+\[
+ \arg z_3 = \arg (1+ia) - \arg (1-ia) = 2 \arctan a.
+\]
+Für alle $n \in \Z$ und
+\[
+ z_n = (i-1)^n = \left(\sqrt{2}e^{i3\pi/4}\right)^n = \sqrt{2}^n e^{in3\pi/4}
+\]
+ist $|z_n| = \sqrt{2}^n$ und $n\frac{3}{4}\pi$ ein Argument von $z_n$.
+
+
+
+
+
+
+
 
 
 
