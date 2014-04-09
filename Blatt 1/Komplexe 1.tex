@@ -11,6 +11,7 @@
 \usepackage{enumerate}
 \usepackage{leftidx}
 \usepackage{stmaryrd} % for \longarrownot
+\usepackage{tikz}
 
 \makeatletter
 \g@addto@macro\th@definition{\thm@headpunct{:}}
@@ -168,6 +169,68 @@ ist $|z_n| = \sqrt{2}^n$ und $n\frac{3}{4}\pi$ ein Argument von $z_n$.
 
 
 
+\section{(Bestimmte Teilmengen)}
+
+
+\subsection{}
+Da $\Im(z) = 0 \Leftrightarrow z \in \R$ für alle $z \in \C$ und für alle $t \in \R, z \in \C$
+\[
+ \frac{z-3}{1+i} = t \Leftrightarrow z = 3+t(1+i)
+\]
+ist
+\begin{align*}
+ A_0
+ &= \left\{ z \in \C : \Im\left( \frac{z-3}{1+i} \right) = 0 \right\}
+ = \left\{ z \in \C : \frac{z-3}{1+i} \in \R \right\} \\
+ &= \{ 3+t(1+i) : t \in \R \}.
+\end{align*}
+Es handelt sich bei $A_0$ also um eine Gerade.
+
+Analog ergibt sich nun auch, dass
+\begin{align*}
+ A_+
+ &= \left\{z \in \C : \Im\left( \frac{z-3}{1+i} \right) > 0 \right\} \\
+ &= \left\{3 + t(1+i) + y(i-1) : t \in \R, y \in \R^+\right\}
+\end{align*}
+und
+\begin{align*}
+ A_-
+ &= \left\{z \in \C : \Im\left( \frac{z-3}{1+i} \right) > 0 \right\} \\
+ &= \left\{3 + t(1+i) + y(i-1) : t \in \R, y \in \R^-\right\}.
+\end{align*}
+Es ist also $A_+$ der Teil der komplexen Ebene, der über $A_0$ liegt, und $A_-$ der Teil der komplexen Ebene, der unter $A_0$ liegt.
+Zusammengefasst ergibt sich die folgende Skizze.
+
+\begin{center}
+ \begin{tikzpicture}[scale=0.3,domain=-7:10]
+  \draw[very thick,->] (-10,0) -- (10,0) node[anchor=west] {$\Re(z)$}; % Re-Achse
+  \draw[very thick,->] (0,-10) -- (0,10) node[anchor=south] {$\Im(z)$}; % Im-Achse
+  % Beschriftung der Re-Achse
+  \foreach \x in {-9,-6,-3,3,6,9}
+   \draw (\x,1/5) -- (\x,-1/5) node[anchor=north] {$\x$};
+  % Beschriftung der Im-Achse
+  \foreach \y in {-9,-6,-3,3,6,9}
+   \draw (1/5,\y) -- (-1/5,\y) node[anchor=east] {$\y i$};
+  % Plote A_0
+  \draw[thick] plot function {-3+x} node[anchor=west] {$A_0$};
+  % Zeichne A_+ ein
+  \draw[fill=black,opacity=0.1] (-10,10) -- (-10,-10) -- (-7,-10) -- (10,7) -- (10,10);
+  \draw (-4,4) node {$A_+$};
+  % Zeichne A_- ein
+  \draw[fill=black,opacity=0.3] (-7,-10) -- (10,-10) -- (10,7);
+  \draw (5,-5) node {$A_-$};
+ \end{tikzpicture}
+\end{center}
+
+
+
+
+
+\subsection{}
+Es ist $B = \emptyset$, denn für alle $z \in B$ ist
+\[
+ i = 3z\bar{z}+iz-i\bar{z}+2 = 3|z|^2 -2\Im(z) +2 \in \R.
+\]
 
 
 
