@@ -160,14 +160,56 @@ Zusammengefasst ergibt sich die folgende Skizze.
 \end{center}
 
 
-
-
-
 \subsection{}
 Es ist $B = \emptyset$, denn für alle $z \in B$ ist
 \[
  i = 3z\bar{z}+iz-i\bar{z}+2 = 3|z|^2 -2\Im(z) +2 \in \R.
 \]
+
+
+\subsection{}
+Es ist
+\[
+ C
+ = \left\{z \in \C \left| \left|z-\frac{1}{\sqrt{2}}\right|^2 \left|z+\frac{1}{\sqrt{2}}\right|^2 = \frac{1}{4} \right.\right\}
+ = \left\{z \in \C \left| \left|z^2-\frac{1}{2}\right| = \frac{1}{2} \right.\right\}.
+\]
+Es ist also $C$ das Urbild des Kreises mit Radius $1/2$ um den Mittelpunkt $1/2$ unter der Abbildung $z \mapsto z^2$.
+
+Um dieses Urbild zu skizzieren betrachten wir daher zunächst das Urbild eines einzelnen Punktes $z = r e^{i\varphi}$, $r \geq 0$, welcher im oberen Qudranten der komplexen Ebene liegt (d.h. $\Im(z), \Re(z) \geq 0$). Da dieses gerade aus den beiden Punkten $\sqrt{r} e^{i\varphi/2}$ und $-\sqrt{r}e^{i\varphi/2}$ besteht, ergibt sich für den gesamten Kreis das Urbild wie in der obigen Abbildung.
+
+\begin{figure}[!ht]\centering\label{fig: Kreis und Urbild}
+  \begin{tikzpicture}[scale=1.5]
+  \draw[very thick,->] (-1.5,0) -- (1.5,0) node[anchor=west] {$\Re(z)$}; % Re-Achse
+  \draw[very thick,->] (0,-1.5) -- (0,1.5) node[anchor=south] {$\Im(z)$}; % Im-Achse
+  % Beschriftung der Re-Achse
+  \foreach \x in {-1,1}
+   \draw (\x,1/10) -- (\x,-1/10) node[anchor=north] {$\x$};
+  % Beschriftung der Im-Achse
+  \foreach \y in {1,-1}
+   \draw (1/10,\y) -- (-1/10,\y) node[anchor=east] {$\y i$};
+  % Der Kreis
+  \draw[thick] (1/2,0) circle (1/2);;
+ \end{tikzpicture}
+ \begin{tikzpicture}[scale=1.5]
+  \draw[very thick,->] (-1.5,0) -- (1.5,0) node[anchor=west] {$\Re(z)$}; % Re-Achse
+  \draw[very thick,->] (0,-1.5) -- (0,1.5) node[anchor=south] {$\Im(z)$}; % Im-Achse
+  % Beschriftung der Re-Achse
+  \foreach \x in {-1,1}
+   \draw (\x,1/10) -- (\x,-1/10) node[anchor=north] {$\x$};
+  % Beschriftung der Im-Achse
+  \foreach \y in {1,-1}
+   \draw (1/10,\y) -- (-1/10,\y) node[anchor=east] {$\y i$};
+  % Das Urbild
+  % In Polarkoordinaten: sqrt(sin(t/2)) e^{i(π-t)/4} für 0 <= t <= π
+  \tkzInit[xmin=-1,xmax=1,xstep=1,ymin=-1,ymax=1,ystep=1]
+  \tkzFctPar[thick,samples=400,domain=0:2*pi]{sqrt(sin(t/2))*cos((pi-t)/4)}{sqrt(sin(t/2))*sin((pi-t)/4)}
+  \tkzFctPar[thick,samples=400,domain=0:2*pi]{-sqrt(sin(t/2))*cos((pi-t)/4)}{sqrt(sin(t/2))*sin((pi-t)/4)}
+ \end{tikzpicture}
+ \caption{Der Kreis (links) und sein Urbild (rechts).}
+\end{figure}
+(Man beachte etwa, dass die imaginäre Achse als Tangente des Kreises der Winkelhalbierende, bzw. deren konjugiertes, als Tangente von $C$ entspricht.)
+
 
 
 

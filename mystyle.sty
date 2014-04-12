@@ -8,7 +8,7 @@
 \usepackage{enumerate}
 \usepackage{leftidx}
 \usepackage{stmaryrd} % for \longarrownot
-\usepackage{tikz}
+\usepackage{tikz,tkz-fct}
 
 \makeatletter
 \g@addto@macro\th@definition{\thm@headpunct{:}}
@@ -22,7 +22,7 @@
 \newtheorem*{is}{Induktionsschritt}
 
 \renewcommand{\thesection}{Aufgabe \arabic{section}}
-\renewcommand{\thesubsection}{\alph{subsection})}
+\renewcommand{\thesubsection}{\arabic{subsection}.}
 \renewcommand{\thesubsubsection}{(\roman{subsubsection})}
 
 \makeatletter
