@@ -209,6 +209,87 @@ Da $\arctan : \R \to (-\pi/2,\pi/2)$ bijektiv ist zeigt dies nach der obigen Üb
 
 
 
+\section{(Verschärfte Dreiecksungleichng)}
+Seien $z, w \in \C$ zunächst beliebig aber fest, wobei $z = x+iy$ und $w = u+iv$ mit $x,y,u,v \in \R$. Wir zeigen zunächst, dass $|z+w| \leq |z|+|w|$. Da $|z+w|, |z|+|w| \geq 0$ ist
+\begin{align*}
+                &\, |z+w| \leq |z|+|w| \\
+ \Leftrightarrow&\, |z+w|^2 \leq (|z|+|w|)^2 \\
+ \Leftrightarrow&\, (x+u)^2 + (y+v)^2 \leq (x^2+y^2) + 2|zw| + (u^2+v^2) \\
+ \Leftrightarrow&\, xu+yv \leq |zw|. \tag{1} \label{eqn: Fallunterscheidung}
+\end{align*}
+Ist $xu+yv < 0 \leq |zw|$ so zeigt dies die Ungleichung. Ist hingegen $xu+yv \geq 0$ so ergibt sich durch weiteres Umformen, dass
+\begin{align*}
+                &\, xu + yv \leq |zw| \\
+ \Leftrightarrow&\, (xu+yv)^2 \leq |zw|^2 = |z|^2 |w|^2 = (x^2+y^2)(u^2+v^2) \\
+ \Leftrightarrow&\, 2xuyv \leq x^2v^2 + y^2u^2 \\
+ \Leftrightarrow&\, 0 \leq (xv-yu)^2, \tag{2} \label{eqn: Determinante}
+\end{align*}
+was offenbar gilt. Dies zeigt die gewünschte Ungleichung. (Der aufmerksame Leser merkt zusätzlich, dass bereits \eqref{eqn: Fallunterscheidung} aufgrund der Cauchy-Schwarz-Ungleichung erfüllt ist.)
+
+Wir behaupten nun, dass die Gleichheit $|z+w| = |z|+|w|$ für $z, w \in \C$ genau dann gilt, wenn $z = 0$ oder $w = 0$ oder es ein $\lambda > 0$ gibt mit $w = \lambda z$. Dass die Gleichheit in diesen Fällen gilt ist klar (im letzten der drei Fälle gilt \[
+ |z+w| = |(1+\lambda)z| = (1+\lambda)|z| = |z| + \lambda|z| = |z| + |\lambda z| = |z|+|w| ).
+\]
+Ist hingegen $|z+w| = |z|+|w|$, so ergibt sich, indem man die obige Herleitung mit Gleichheit statt der Abschätzung $\leq$ wiederholt, aus \eqref{eqn: Determinante}, dass
+\[
+ 0 = (xv-yu)^2 \Rightarrow 0 = xv-yu = \det \vect{x&u\\y&v}.
+\]
+Dies zeigt, dass $(x,y), (v,u) \in \R^2$ linear abhängig sind, es also ein $\lambda \in \R$ gibt mit $(u,v) = \lambda (x,y)$. Aus \eqref{eqn: Fallunterscheidung} ergibt sich damit, dass
+\[
+ 0
+ \leq |zw| = xu+yv
+ = \vect{x\\y} \cdot \vect{u\\v}
+ = \lambda \vect{x\\y} \cdot \vect{u\\v}
+ = \lambda \left\|\vect{x\\y}\right\|^2,
+\]
+also im Falle $(x,y), (u,v) \neq 0$ (und damit insbesondere $\|(x,y)\|^2 > 0$) $\lambda > 0$ sein muss.
+
+Die umgekehrte Dreiecksungleichung ergibt sich daraus, dass nach der bereits gezeigten Ungleichung für alle $z, w \in \C$
+\begin{gather*}
+ |z| = |w+z-w| \leq |w| + |z-w| \Rightarrow |z|-|w| \leq |z-w| \text{ und} \\
+ |w| = |z+w-z| \leq |z|+|w-z| \Rightarrow |w|-|z| \leq |w-z| = |z-w|,
+\end{gather*}
+also
+\[
+ ||z|-|w|| = \max \{ |z|-|w|, |w|-|z|\} \leq |z-w|.
+\]
+Die auf dem Aufgabenblatt angegebene Form ergibt sich nun durch
+\[
+ ||z|-|w| =||z|-|-w|| \leq |z-(-w)| = |z+w|
+\]
+für alle $z, w \in \C$.
+
+Wir behaupten, dass die Gleichheit $||z|-|w|| = |z+w|$ genau dann gilt, wenn $z=0$ oder $w=0$ oder $w = -\lambda z$ für ein $\lambda > 0$. Ist $z = 0$ oder $w = 0$ so ist die Gleichheit offenbar erfüllt, und ist $w = -\lambda z$ für ein $\lambda > 0$, so ist
+\begin{align*}
+ |z+w|
+ &= |(1-\lambda)z| = |1-\lambda| |z|
+ =
+ \begin{cases}
+  (1-\lambda) |z| & \text{falls } \lambda \leq 1 \\
+  (\lambda-1) |z| & \text{falls } \lambda > 1
+ \end{cases} \\
+ &=
+ \begin{cases}
+  |z|-|w| &\text{falls } \lambda \leq 1 \\
+  |w|-|z| &\text{falls } \lambda > 1
+ \end{cases}
+ = \max\{|z|-|w|, |w|-|z|\} \\
+ &= ||z|-|w||.
+\end{align*}
+Man bemerke hierfür, dass $|z| \geq \lambda |z| = |w|$ für $\lambda \leq 1$ und $|z| \leq \lambda |z| = |w|$ für $\lambda > 1$.
+
+Ist andererseits $||z|-|w|| = |z+w|$ mit $z, w \neq 0$, so können wir o.B.d.A. davon ausgehen, dass $|z| \geq |w|$ und erhalten so, dass
+\[
+ |z|-|w| = |z+w| \Rightarrow |z| = |z+w|+|w| = |z+w| + |-w|.
+\]
+Es ist nach der obigen Diskussion also $z+w=0$ (also $w = -z$) oder $-w = 0$ (was im Widerspruch zu $w \neq 0$ steht) oder $z+w = - \lambda w$ und damit $w = - \frac{1}{1+\lambda} z$ für ein $\lambda > 0$.
+
+
+
+
+
+
+
+
 
 
 
