@@ -236,6 +236,45 @@ Es ist $B = \emptyset$, denn für alle $z \in B$ ist
 
 
 
+\section{(Kleine Stereograpische Projektion)}
+Wir bemerken zunächst, dass der Ausdruck $(i\lambda+1)/(i\lambda-1)$ für alle $\lambda \in \R$ wohldefiniert ist, da stets $i\lambda-1 \neq 0$. Für alle $\lambda \in \R$ ist auch $i\lambda+1 \neq i\lambda-1$ (da $1 \neq -1$) und daher $(i\lambda+1)/(i\lambda-1) \neq 1$. Schließlich ist für alle $\lambda \in \R$
+\[
+ \left| \frac{i\lambda+1}{i\lambda-1} \right|
+ = \frac{|i\lambda+1|}{|i\lambda-1|}
+ = \frac{\sqrt{\lambda^2+1}}{\sqrt{\lambda^2+1}}
+ = 1.
+\]
+Die Abbildung
+\[
+ \psi : \R \to S^1 \setminus \{1\}, \lambda \mapsto \frac{i\lambda+1}{i\lambda-1}
+\]
+ist also wohldefiniert.
+
+Da jedes $z \in S^1 \setminus \{1\}$ eine eindeutige Darstellung als $z = e^{i\varphi}$ mit $\varphi \in (0,2\pi)$ hat, genügt es zum Nachweis der Bijektivität von $\psi$ zu zeigen, dass es für alle $\varphi \in (0,2\pi)$ genau ein $\lambda \in \R$ mit $\arg \psi(z) = \varphi$ gibt. (Wir fassen $\arg$ hier als eine Abbildung $\arg : \C \setminus \{0\} \to [0,2\pi)$ auf.)
+
+Hierfür bemerken wir, dass für alle $\lambda \in \R$
+\[
+ \arg (i \lambda + 1) = \arctan \lambda
+\]
+sowie
+\[
+ \arg (i \lambda - 1) = \arg(-i \lambda + 1) - \pi = 2 \pi - \arctan (\lambda) - \pi = \pi - \arctan \lambda.
+\]
+Es ist also für alle $\lambda \in \R$
+\[
+ \arg \frac{i\lambda+1}{i\lambda-1}
+ = 2\pi - \left( \arctan \lambda - (\pi - \arctan \lambda) \right)
+ = \pi - 2\arctan \lambda.
+\]
+Da $\arctan : \R \to (-\pi/2,\pi/2)$ bijektiv ist zeigt dies nach der obigen Überlegung die Bijektivität von $\psi$.
+
+
+
+
+
+
+
+
 
 
 
