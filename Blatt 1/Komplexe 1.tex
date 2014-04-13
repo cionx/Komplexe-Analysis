@@ -6,7 +6,6 @@
 \setromanfont[Mapping=tex-text]{Linux Libertine O}
 % \setsansfont[Mapping=tex-text]{DejaVu Sans}
 % \setmonofont[Mapping=tex-text]{DejaVu Sans Mono}
-\parindent 0pt
 
 \title{\sc Einführung in die Komplexe Analysis \\ \Large Blatt 1}
 \author{Jendrik Stelzner}
@@ -19,7 +18,7 @@
 
 
 
-\section{(Real und Imaginärteil)}
+\section{(Real und Imaginärteile)}
 Es ist
 \[
  \frac{i+1}{i-1} = \frac{i+1}{i(1+i)} = \frac{1}{i} = -i,
@@ -42,7 +41,7 @@ Da $i^2 = -1$ (also insbesondere $i^4 = 1$) ist für alle $n \in \Z$
 Schließlich ist
 \[
  \left(\frac{1-i\sqrt{5}}{3}\right)^n
- = \Re \left(\frac{1-i\sqrt{5}}{3}\right)^n + i \Im \left(\frac{1-i\sqrt{5}}{3}\right)^n
+ = \Re \left( \left(\frac{1-i\sqrt{5}}{3}\right)^n \right) + i \Im \left( \left(\frac{1-i\sqrt{5}}{3}\right)^n \right)
 \]
 und
 \begin{align*}
@@ -81,7 +80,7 @@ Da $i^2 = -1$ und $i^4 = 1$ ist $ z_2 = i^{2014} = -1$, also
 \[
  |z_2| = 1 \text{ und } \arg z_2 = \pi.
 \]
-Für $z_3 = \frac{1+ia}{1-ia}$ ist
+Für $a \in \R$ und $z_3 = \frac{1+ia}{1-ia}$ ist
 \[
  \left|z_3\right|
  = \frac{|1+ia|}{|1-ia|}
@@ -98,9 +97,9 @@ ist
 \]
 Für alle $n \in \Z$ und
 \[
- z_n = (i-1)^n = \left(\sqrt{2}e^{i3\pi/4}\right)^n = \sqrt{2}^n e^{in3\pi/4}
+ z_n = (i-1)^n = \left(\sqrt{2}e^{i3\pi/4}\right)^n = 2^{n/2} e^{in3\pi/4}
 \]
-ist $|z_n| = \sqrt{2}^n$ und $n\frac{3}{4}\pi$ ein Argument von $z_n$.
+ist $|z_n| = 2^{n/2}$ und $n\frac{3}{4}\pi$ ein Argument von $z_n$.
 
 
 
@@ -110,7 +109,7 @@ ist $|z_n| = \sqrt{2}^n$ und $n\frac{3}{4}\pi$ ein Argument von $z_n$.
 
 
 \subsection{}
-Da $\Im(z) = 0 \Leftrightarrow z \in \R$ für alle $z \in \C$ und für alle $t \in \R, z \in \C$
+Da $\Im(z) = 0 \Leftrightarrow z \in \R$ für alle $z \in \C$, und für alle $t \in \R, z \in \C$
 \[
  \frac{z-3}{1+i} = t \Leftrightarrow z = 3+t(1+i)
 \]
@@ -165,6 +164,7 @@ Es ist $B = \emptyset$, denn für alle $z \in B$ ist
 \[
  i = 3z\bar{z}+iz-i\bar{z}+2 = 3|z|^2 -2\Im(z) +2 \in \R.
 \]
+Die zeichnerische Darstellung der leeren Menge lassen wir dem geneigten Leser als kreative Übung.
 
 
 \subsection{}
@@ -176,9 +176,9 @@ Es ist
 \]
 Es ist also $C$ das Urbild des Kreises mit Radius $1/2$ um den Mittelpunkt $1/2$ unter der Abbildung $z \mapsto z^2$.
 
-Um dieses Urbild zu skizzieren betrachten wir daher zunächst das Urbild eines einzelnen Punktes $z = r e^{i\varphi}$, $r \geq 0$, welcher im oberen Qudranten der komplexen Ebene liegt (d.h. $\Im(z), \Re(z) \geq 0$). Da dieses gerade aus den beiden Punkten $\sqrt{r} e^{i\varphi/2}$ und $-\sqrt{r}e^{i\varphi/2}$ besteht, ergibt sich für den gesamten Kreis das Urbild wie in der obigen Abbildung.
+Um dieses Urbild zu skizzieren betrachten wir daher zunächst das Urbild eines einzelnen Punktes $z = r e^{i\varphi}$, $r \geq 0$, welcher im oberen Qudranten der komplexen Ebene liegt (d.h. $\Im(z), \Re(z) \geq 0$). Da dieses gerade aus den beiden Punkten $\sqrt{r} e^{i\varphi/2}$ und $-\sqrt{r}e^{i\varphi/2}$ besteht, ergibt sich für den gesamten Kreis das Urbild wie in der Abbildung.
 
-\begin{figure}[!ht]\centering\label{fig: Kreis und Urbild}
+\begin{figure}[!ht]\centering
   \begin{tikzpicture}[scale=1.5]
   \draw[very thick,->] (-1.5,0) -- (1.5,0) node[anchor=west] {$\Re(z)$}; % Re-Achse
   \draw[very thick,->] (0,-1.5) -- (0,1.5) node[anchor=south] {$\Im(z)$}; % Im-Achse
@@ -229,29 +229,22 @@ Die Abbildung
 \]
 ist also wohldefiniert.
 
-Da jedes $z \in S^1 \setminus \{1\}$ eine eindeutige Darstellung als $z = e^{i\varphi}$ mit $\varphi \in (0,2\pi)$ hat, genügt es zum Nachweis der Bijektivität von $\psi$ zu zeigen, dass es für alle $\varphi \in (0,2\pi)$ genau ein $\lambda \in \R$ mit $\arg \psi(z) = \varphi$ gibt. (Wir fassen $\arg$ hier als eine Abbildung $\arg : \C \setminus \{0\} \to [0,2\pi)$ auf.)
+Da jedes $z \in S^1 \setminus \{1\}$ eine eindeutige Darstellung als $z = e^{i\varphi}$ mit $\varphi \in (0,2\pi)$ hat, genügt es zum Nachweis der Bijektivität von $\psi$ zu zeigen, dass es für alle $\varphi \in (0,2\pi)$ genau ein $\lambda \in \R$ gibt, so dass $\varphi$ ein Argument von $\psi(\lambda)$ ist.
 
-Hierfür bemerken wir, dass für alle $\lambda \in \R$
+Hierfür bemerken wir für $\lambda \in \R$, dass $\arctan \lambda$ ein Argument von $i \lambda + 1$ ist und $-\pi - \arctan \lambda$ ein Argument von $i \lambda - 1$.
+
+Für alle $\lambda \in \R$ ist daher
 \[
- \arg (i \lambda + 1) = \arctan \lambda
+ \arctan \lambda - (-\pi - \arctan \lambda)
+ = \pi + 2\arctan \lambda
 \]
-sowie
-\[
- \arg (i \lambda - 1) = \arg(-i \lambda + 1) - \pi = 2 \pi - \arctan (\lambda) - \pi = \pi - \arctan \lambda.
-\]
-Es ist also für alle $\lambda \in \R$
-\[
- \arg \frac{i\lambda+1}{i\lambda-1}
- = 2\pi - \left( \arctan \lambda - (\pi - \arctan \lambda) \right)
- = \pi - 2\arctan \lambda.
-\]
-Da $\arctan : \R \to (-\pi/2,\pi/2)$ bijektiv ist zeigt dies nach der obigen Überlegung die Bijektivität von $\psi$.
+ein Argument von $\psi(\lambda)$. Da $\arctan : \R \to (-\pi/2,\pi/2)$ bijektiv ist zeigt dies nach der obigen Überlegung die Bijektivität von $\psi$.
 
 
 
 
 
-\section{(Verschärfte Dreiecksungleichng)}
+\section{(Verschärfte Dreiecksungleichung)}
 Seien $z, w \in \C$ zunächst beliebig aber fest, wobei $z = x+iy$ und $w = u+iv$ mit $x,y,u,v \in \R$. Wir zeigen zunächst, dass $|z+w| \leq |z|+|w|$. Da $|z+w|, |z|+|w| \geq 0$ ist
 \begin{align*}
                 &\, |z+w| \leq |z|+|w| \\
@@ -266,24 +259,24 @@ Ist $xu+yv < 0 \leq |zw|$ so zeigt dies die Ungleichung. Ist hingegen $xu+yv \ge
  \Leftrightarrow&\, 2xuyv \leq x^2v^2 + y^2u^2 \\
  \Leftrightarrow&\, 0 \leq (xv-yu)^2, \tag{2} \label{eqn: Determinante}
 \end{align*}
-was offenbar gilt. Dies zeigt die gewünschte Ungleichung. (Der aufmerksame Leser merkt zusätzlich, dass bereits \eqref{eqn: Fallunterscheidung} aufgrund der Cauchy-Schwarz-Ungleichung erfüllt ist.)
+was offenbar gilt. Dies zeigt die gewünschte Ungleichung. (Der aufmerksame Leser merkt natürlich, dass bereits \eqref{eqn: Fallunterscheidung} aufgrund der Cauchy-Schwarz-Ungleichung erfüllt ist.)
 
 Wir behaupten nun, dass die Gleichheit $|z+w| = |z|+|w|$ für $z, w \in \C$ genau dann gilt, wenn $z = 0$ oder $w = 0$ oder es ein $\lambda > 0$ gibt mit $w = \lambda z$. Dass die Gleichheit in diesen Fällen gilt ist klar (im letzten der drei Fälle gilt \[
  |z+w| = |(1+\lambda)z| = (1+\lambda)|z| = |z| + \lambda|z| = |z| + |\lambda z| = |z|+|w| ).
 \]
-Ist hingegen $|z+w| = |z|+|w|$, so ergibt sich, indem man die obige Herleitung mit Gleichheit statt der Abschätzung $\leq$ wiederholt, aus \eqref{eqn: Determinante}, dass
+Ist hingegen $|z+w| = |z|+|w|$, so ergibt sich, indem man die obige Herleitung mit Gleichheit statt der Abschätzung $\leq$ wiederholt, aus der \eqref{eqn: Determinante} entsprechenden Gleichung, dass
 \[
  0 = (xv-yu)^2 \Rightarrow 0 = xv-yu = \det \vect{x&u\\y&v}.
 \]
-Dies zeigt, dass $(x,y), (v,u) \in \R^2$ linear abhängig sind, es also ein $\lambda \in \R$ gibt mit $(u,v) = \lambda (x,y)$. Aus \eqref{eqn: Fallunterscheidung} ergibt sich damit, dass
+Dies zeigt, dass $(x,y), (v,u) \in \R^2$ linear abhängig sind, es also ein $\lambda \in \R$ gibt mit $(u,v) = \lambda (x,y)$. Aus der \eqref{eqn: Fallunterscheidung} entsprechenden Gleichung ergibt sich weiter, dass
 \[
  0
  \leq |zw| = xu+yv
  = \vect{x\\y} \cdot \vect{u\\v}
- = \lambda \vect{x\\y} \cdot \vect{u\\v}
+ = \lambda \vect{x\\y} \cdot \vect{x\\y}
  = \lambda \left\|\vect{x\\y}\right\|^2,
 \]
-also im Falle $(x,y), (u,v) \neq 0$ (und damit insbesondere $\|(x,y)\|^2 > 0$) $\lambda > 0$ sein muss.
+also im Falle $(x,y), (u,v) \neq 0$ (und damit insbesondere $\|(x,y)\|^2 > 0$), dass $\lambda > 0$ sein muss.
 
 Die umgekehrte Dreiecksungleichung ergibt sich daraus, dass nach der bereits gezeigten Ungleichung für alle $z, w \in \C$
 \begin{gather*}
@@ -294,11 +287,10 @@ also
 \[
  ||z|-|w|| = \max \{ |z|-|w|, |w|-|z|\} \leq |z-w|.
 \]
-Die auf dem Aufgabenblatt angegebene Form ergibt sich nun durch
+Die auf dem Aufgabenblatt angegebene Form ergibt sich nun für alle $z, w \in \C$ durch
 \[
- ||z|-|w| =||z|-|-w|| \leq |z-(-w)| = |z+w|
+ ||z|-|w|| =||z|-|-w|| \leq |z-(-w)| = |z+w|.
 \]
-für alle $z, w \in \C$.
 
 Wir behaupten, dass die Gleichheit $||z|-|w|| = |z+w|$ genau dann gilt, wenn $z=0$ oder $w=0$ oder $w = -\lambda z$ für ein $\lambda > 0$. Ist $z = 0$ oder $w = 0$ so ist die Gleichheit offenbar erfüllt, und ist $w = -\lambda z$ für ein $\lambda > 0$, so ist
 \begin{align*}
@@ -323,7 +315,7 @@ Ist andererseits $||z|-|w|| = |z+w|$ mit $z, w \neq 0$, so können wir o.B.d.A. 
 \[
  |z|-|w| = |z+w| \Rightarrow |z| = |z+w|+|w| = |z+w| + |-w|.
 \]
-Es ist nach der obigen Diskussion also $z+w=0$ (also $w = -z$) oder $-w = 0$ (was im Widerspruch zu $w \neq 0$ steht) oder $z+w = - \lambda w$ und damit $w = - \frac{1}{1+\lambda} z$ für ein $\lambda > 0$.
+Es ist nach der obigen Diskussion für Bedingungen von Gleichheit bei der normalen Dreiecksungleichung also $z+w=0$ (also $w = -z$) oder $-w = 0$ (was wir wegen $w \neq 0$ ausschließen können) oder $z+w = - \lambda w$ und damit $w = - \frac{1}{1+\lambda} z$ für ein $\lambda > 0$.
 
 
 
