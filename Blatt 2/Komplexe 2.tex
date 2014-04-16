@@ -32,6 +32,44 @@ Also ist für alle $\rho \in \C$
 
 
 
+\addtocounter{section}{1}
+
+
+
+
+
+\section{(Real- und Imaginärteil quadratischer Funktionen)}
+Wir behaupten, dass $p(x,y) = ax^2 + bxy + cy^2$ mit $a,b,c \in \R$ genau dann Realteil des komplexen Polynoms $P(z) = Az^2 + Bz + C$ ist, wenn $c = -a$.
+
+Ist $c = -a$, so ist für beliebiges $b \in \R$
+\[
+ p(x,y) = ax^2 + bxy - ay^2 = \Re\left(\left(a-\frac{1}{2}bi\right)(x+iy)^2\right).
+\]
+
+Sei andererseits $p = \Re(P)$. Da
+\[
+ \Re(C) = \Re(P(0)) = p(0,0) = 0
+\]
+ist $p = \Re(Az^2+Bz)$, wir können also o.B.d.A. davon ausgehen, dass $C=0$. Da für alle $z = x+iy \in \C$
+\begin{align*}
+ 0 &= p(x,y) - p(-x,-y) = \Re(P(z))-\Re(P(-z)) \\
+   &= \Re(P(z)-P(-z)) = \Re(Bz - B(-z)) = \Re(2Bz) = 2 \Re(Bz)
+\end{align*}
+ist $\Re(Bz) = 0$ für alle $z \in \C$. Da $0 = \Re(B \bar{B}) = \Re(|B|^2)= |B|^2$ folgt daraus, dass $B = 0$. Also ist $P(z) = Az^2$ für $A = x_A + iy_A \in \C$. Es ist daher
+\[
+ p(x,y) = \Re(Az^2) = \Re((x_A+iy_A)(x+iy)^2) = x_Ax^2 - 2y_Axy - x_A y^2,
+\]
+was die Behauptung zeigt.
+
+Man bemerke noch, dass $p$ genau dann Imaginärteil eines komplexen Polynoms vom Grad $n$ ist, wenn $p$ Realteil eines komplexen Polynoms vom Grad $n$ ist, denn $p = \Im(P) \Leftrightarrow p = \Re(-iP)$, bzw. $p = \Re(P) \Leftrightarrow p = \Im(iP)$ für jedes komplexe Polynom $P$. Also ist $p$ genau dann Imaginärteil eines Polynoms $P(z) = Az^2+Bz+C$, wenn $a = -c$.
+
+
+
+
+
+
+
+
 
 
 
