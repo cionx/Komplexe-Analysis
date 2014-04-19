@@ -32,7 +32,80 @@ Also ist für alle $\rho \in \C$
 
 
 
-\addtocounter{section}{1}
+\section{(Niveaulinien komplexwertiger Funktionen)}
+Für $z = x+iy \in \C$ ist
+\[
+ z^2 = (x+iy)^2 = x^2 - y^2 + i2xy,
+\]
+also
+\[
+ \Re\left(z^2\right) = x^2-y^2 \text{ und } \Im\left(z^2\right) = 2xy.
+\]
+
+Für die Niveaulinie von $\Re\left(z^2\right)$ für $c \in \R$ ergibt sich, dass $x^2-y^2 = c$ für $x^2 < c$ keine Lösung besitzt, und sonst, dass $y = \pm \sqrt{x^2-c}$. Für die Niveulinienen von $\Im\left(z^2\right) = 2xy$ ergibt sich für $c=0$ die Vereinigung von reeler und imaginärer Achse, und für $c \neq 0$ gerade $y = 2/(cx)$. Für ein Bild der Niveulinean siehe Abbildung \ref{fig: Niveaulinien z^2}.
+\begin{figure}\label{fig: Niveaulinien z^2}\centering
+ \newcommand{\samplerate}{400}
+ \begin{tikzpicture}[scale=0.2, domain=-10:10]
+  % die Koordinatenachsen
+  \draw[very thick,->] (-10,0) -- (10,0) node[anchor=west] {$\Re(z)$}; % Re-Achse
+  \draw[very thick,->] (0,-10) -- (0,10) node[anchor=south] {$\Im(z)$}; % Im-Achse
+  % Niveulinien für
+  % c = 0
+  \draw plot function {x};
+  \draw plot function {-x};
+  % c = -5
+  \draw plot function {sqrt(x**2+5)};
+  \draw plot function {-sqrt(x**2+5)};
+  % c = 5
+  \draw[domain=sqrt(5):10,smooth,samples=\samplerate] plot function {sqrt(x**2-5)};
+  \draw[domain=sqrt(5):10,smooth,samples=\samplerate] plot function {-sqrt(x**2-5)};
+  \draw[domain=-10:-sqrt(5),smooth,samples=\samplerate] plot function {sqrt(x**2-5)};
+  \draw[domain=-10:-sqrt(5),smooth,samples=\samplerate] plot function {-sqrt(x**2-5)};
+  % c = -15
+  \draw plot function {sqrt(x**2+15)};
+  \draw plot function {-sqrt(x**2+15)};
+  % c = 15
+  \draw[domain=sqrt(15):10,smooth,samples=\samplerate] plot function {sqrt(x**2-15)};
+  \draw[domain=sqrt(15):10,smooth,samples=\samplerate] plot function {-sqrt(x**2-15)};
+  \draw[domain=-10:-sqrt(15),smooth,samples=\samplerate] plot function {sqrt(x**2-15)};
+  \draw[domain=-10:-sqrt(15),smooth,samples=\samplerate] plot function {-sqrt(x**2-15)};
+ \end{tikzpicture}
+ \begin{tikzpicture}[scale=0.2, domain=-10:10]
+  % die Koordinatenachsen
+  \draw[very thick,->] (-10,0) -- (10,0) node[anchor=west] {$\Re(z)$}; % Re-Achse
+  \draw[very thick,->] (0,-10) -- (0,10) node[anchor=south] {$\Im(z)$}; % Im-Achse
+  % Niveulinien für
+  % c = 4
+  \draw[domain=0.2:10,smooth,samples=\samplerate] plot function {2/x};
+  \draw[domain=-10:-0.2,smooth,samples=\samplerate] plot function {2/x};
+  % c = -4
+  \draw[domain=0.2:10,smooth,samples=\samplerate] plot function {-2/x};
+  \draw[domain=-10:-0.2,smooth,samples=\samplerate] plot function {-2/x};
+  % c = 16
+  \draw[domain=0.8:10,smooth,samples=\samplerate] plot function {8/x};
+  \draw[domain=-10:-0.8,smooth,samples=\samplerate] plot function {8/x};
+  % c = -16
+  \draw[domain=0.8:10,smooth,samples=\samplerate] plot function {-8/x};
+  \draw[domain=-10:-0.8,smooth,samples=\samplerate] plot function {-8/x};
+ \end{tikzpicture}
+ \caption{Niveulinien von $\Re\left(z^2\right)$ und $\Im\left(z^2\right)$.}
+\end{figure}
+
+Für $z = x+iy \in \C$ ist
+\[
+ \frac{1}{z} = \frac{1}{x+iy} = \frac{x}{x^2+y^2} + i\frac{-y}{x^2+y^2},
+\]
+also
+\[
+ \Re\left(\frac{1}{z}\right) = \frac{x}{x^2+y^2} \text{ und }
+ \Im\left(\frac{1}{z}\right) = \frac{-y}{x^2+y^2}.
+\]
+
+
+
+
+
+
 
 
 
