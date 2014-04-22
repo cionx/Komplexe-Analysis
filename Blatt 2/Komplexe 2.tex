@@ -19,7 +19,7 @@
 
 
 \section{(Konjugierte Nullstellen)}
-Bekanntermaßen handelt es sich bei der Konjugation um einen $\R$-Algebraauto\-morph\-ismus von $\C$ (dem einzigen neben der Identität $\id_\C$). Inbesondere ist $\bar{x} = x$ für alle $x \in \R$. Es ist daher für alle $\rho \in \C$
+Bekanntermaßen handelt es sich bei der Konjugation $\C \to \C, x+iy \to x-iy$ um einen $\R$-Algebraauto\-morph\-ismus von $\C$ (dem einzigen neben der Identität $\id_\C$). Inbesondere ist $\bar{x} = x$ für alle $x \in \R$. Es ist daher für alle $\rho \in \C$
 \[
  \overline{P(\rho)} = \overline{\sum_{k=0}^n a_k \rho^k} = \sum_{k=0}^n a_k \bar{\rho}^k = P(\bar{\rho}).
 \]
@@ -42,7 +42,7 @@ also
  \Re\left(z^2\right) = x^2-y^2 \text{ und } \Im\left(z^2\right) = 2xy.
 \]
 
-Für die Niveaulinie von $\Re\left(z^2\right)$ für $c \in \R$ ergibt sich, dass $x^2-y^2 = c$ für $x^2 < c$ keine Lösung besitzt, und sonst, dass $y = \pm \sqrt{x^2-c}$. Für die Niveulinienen von $\Im\left(z^2\right) = 2xy$ ergibt sich für $c=0$ die Vereinigung von reeler und imaginärer Achse, und für $c \neq 0$ gerade $y = 2/(cx)$. Für ein Bild der Niveulinien siehe Abbildung \ref{fig: Niveaulinien z²} auf Seite \pageref{fig: Niveaulinien z²}.
+Für die Niveaulinie von $\Re\left(z^2\right)$ für $c \in \R$ ergibt sich, dass $x^2-y^2 = c$ für $x^2 < c$ keine Lösung besitzt, und sonst, dass $y = \pm \sqrt{x^2-c}$. Für die Niveulinienen von $\Im\left(z^2\right) = 2xy$ ergibt sich für $c=0$ die Vereinigung von reeler und imaginärer Achse, und $y = 2/(cx)$ für $c \neq 0$. Für ein Bild der Niveulinien siehe Abbildung \ref{fig: Niveaulinien z²} auf Seite \pageref{fig: Niveaulinien z²}.
 \begin{figure}\centering
  % nun kommt ziemlich hässlicher Code, den ich bei Gelegenheit gegen etwas besseres austauschen sollte
  \newcommand{\samplerate}{400}
@@ -103,7 +103,7 @@ also
  \Im\left(\frac{1}{z}\right) = \frac{-y}{x^2+y^2}.
 \]
 
-Um die Niveulinien von $\Re(f)$ für $f : \C \smallsetminus \{0\} \to \C \smallsetminus \{0\}, z \mapsto z^{-1}$ zu bestimmen bemerken wir zunächst, dass $f$ involutiv ist. Es ist daher für alle $c \in \R$ und $z \in \C \smallsetminus \{0\}$
+Um die Niveulinien von $\Re(f)$ für $f : \C \smallsetminus \{0\} \to \C \smallsetminus \{0\}, z \mapsto z^{-1}$ zu bestimmen, bemerken wir zunächst, dass $f$ involutiv ist. Es ist daher für alle $c \in \R$ und $z \in \C \smallsetminus \{0\}$
 \begin{align*}
  \Re(f(z)) = c
  &\Leftrightarrow f(z) \in \{c + i\lambda : \lambda \in \R\} \smallsetminus \{0\} \\
@@ -129,7 +129,7 @@ Dies ergibt sich daraus, dass die Abbildung $\R \to S^1 \smallsetminus\{1\}, \la
  = \left\{\frac{c+i\lambda}{2c(c-i\lambda)} : \lambda \in \R\right\} + \frac{1}{2c} \\
  =&\, -\frac{1}{2c} \left\{\frac{i\lambda+c}{i\lambda-c} : \lambda \in \R\right\} + \frac{1}{2c}
  = -\frac{1}{2c} \left\{\frac{i\frac{\lambda}{c}+1}{i\frac{\lambda}{c}-1} : \lambda \in \R\right\} + \frac{1}{2c} \\
- =&\, -\frac{1}{2c} \left\{\frac{i\lambda+1}{i\lambda-1} : \lambda \in \R\right\} + \frac{1}{2}
+ =&\, -\frac{1}{2c} \left\{\frac{i\lambda+1}{i\lambda-1} : \lambda \in \R\right\} + \frac{1}{2c}
  = -\frac{1}{2c} \left(S^1 \smallsetminus\{1\}\right) + \frac{1}{2c} \\
  =&\, \left\{z \in \C \setminus\{0\} : \left|z-\frac{1}{2c}\right| = \frac{1}{2|c|}\right\}.
 \end{align*}
@@ -163,7 +163,7 @@ Skizziert sehen die Niveulinien aus wie in Abbildung \ref{fig: Niveulinien von 1
     \draw (0,\r) circle (\r);
   \end{scope}
  \end{tikzpicture}
- \caption{Niveulinien von $\Re(1/z)$ und $\Im(1/z)$.}
+ \caption{Niveulinien von $\Re(1/z)$ (links) und $\Im(1/z)$ (rechts).}
  \label{fig: Niveulinien von 1/z}
 \end{figure}
 
@@ -171,25 +171,15 @@ Skizziert sehen die Niveulinien aus wie in Abbildung \ref{fig: Niveulinien von 1
 
 
 
-
-
-
-
-
-
-
-
-
-
 \section{(Real- und Imaginärteil quadratischer Funktionen)}
-Wir behaupten, dass $p(x,y) = ax^2 + bxy + cy^2$ mit $a,b,c \in \R$ genau dann Realteil des komplexen Polynoms $P(z) = Az^2 + Bz + C$ ist, wenn $c = -a$.
+Wir behaupten, dass $p(x,y) = ax^2 + bxy + cy^2$ mit $a,b,c \in \R$ genau dann Realteil eines komplexen Polynoms $P$ der Form $P(z) = Az^2 + Bz + C$ mit $A,B,C \in \C$ ist, wenn $c = -a$.
 
 Ist $c = -a$, so ist für beliebiges $b \in \R$
 \[
  p(x,y) = ax^2 + bxy - ay^2 = \Re\left(\left(a-\frac{1}{2}bi\right)(x+iy)^2\right).
 \]
 
-Sei andererseits $p = \Re(P)$. Da
+Sei andererseits $p = \Re(P)$ für ein komplexes Polynom $P$ wie oben. Da
 \[
  \Re(C) = \Re(P(0)) = p(0,0) = 0
 \]
@@ -198,13 +188,13 @@ ist $p = \Re(Az^2+Bz)$, wir können also o.B.d.A. davon ausgehen, dass $C=0$. Da
  0 &= p(x,y) - p(-x,-y) = \Re(P(z))-\Re(P(-z)) \\
    &= \Re(P(z)-P(-z)) = \Re(Bz - B(-z)) = \Re(2Bz) = 2 \Re(Bz)
 \end{align*}
-ist $\Re(Bz) = 0$ für alle $z \in \C$. Da $0 = \Re(B \bar{B}) = \Re(|B|^2)= |B|^2$ folgt daraus, dass $B = 0$. Also ist $P(z) = Az^2$ für $A = x_A + iy_A \in \C$. Es ist daher
+ist $\Re(Bz) = 0$ für alle $z \in \C$. Da $0 = \Re(B \bar{B}) = \Re(|B|^2)= |B|^2$ folgt, dass $B = 0$. Also ist $P(z) = Az^2$ für $A = x_A + iy_A \in \C$. Es ist daher
 \[
  p(x,y) = \Re(Az^2) = \Re((x_A+iy_A)(x+iy)^2) = x_Ax^2 - 2y_Axy - x_A y^2,
 \]
 was die Behauptung zeigt.
 
-Man bemerke noch, dass $p$ genau dann Imaginärteil eines komplexen Polynoms vom Grad $n$ ist, wenn $p$ Realteil eines komplexen Polynoms vom Grad $n$ ist, denn $p = \Im(P) \Leftrightarrow p = \Re(-iP)$, bzw. $p = \Re(P) \Leftrightarrow p = \Im(iP)$ für jedes komplexe Polynom $P$. Also ist $p$ genau dann Imaginärteil eines Polynoms $P(z) = Az^2+Bz+C$, wenn $a = -c$.
+Man bemerke noch, dass $p$ genau dann Imaginärteil eines komplexen Polynoms vom Grad $n$ ist, wenn $p$ Realteil eines komplexen Polynoms vom Grad $n$ ist, denn $p = \Im(P) \Leftrightarrow p = \Re(-iP)$, bzw. $p = \Re(P) \Leftrightarrow p = \Im(iP)$ für jedes komplexe Polynom $P$. Also ist $p$ genau dann Imaginärteil eines passenden 2komplexen Polynoms $P$ der Form $P(z) = Az^2+Bz+C$ mit $A,B,C \in \C$, wenn $a = -c$.
 
 
 
@@ -273,7 +263,7 @@ Es muss also bereits $|x| \neq |x'|$ und $|y| \neq |y'|$. Wir können dabei o.B.
 \[
  \cosh(y)|\sin(x)| = \cosh(y')|\sin(x')|,
 \]
-dass $\cosh(y) > \cosh(y')$, also $|y| > |y'|$. Aus $|x| < |x'|$ und $|y| < |y'|$ folgt, dass $|\sinh(y)| > |\sinh(y')|$ und $\cos(x) > \cos(x')$, also
+dass $\cosh(y) > \cosh(y')$, also $|y| > |y'|$. Aus $|x| < |x'|$ und $|y| > |y'|$ folgt, dass $|\sinh(y)| > |\sinh(y')|$ und $\cos(x) > \cos(x')$, also
 \[
  |\sinh(y)|\cos(x) > |\sinh(y')|\cos(x').
 \]
@@ -324,22 +314,7 @@ Da $x_y$ stetig von $y$ abhängt, und damit auch $|\varphi_y(x_y)|$, gibt es dah
 $
  \varphi_{y_0}\left(x_{y_0}\right) = \sin(x_{y_0}+iy_0) = z.
 $
-Da $x_{y_0} \in (0,\pi/2)$ und $y_0 > 0$, also $x_{y_0}+iy_0 \in T$, zeigt dies die Surjektivität von $\sin : T \to A$.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Da $x_{y_0} \in (0,\pi/2)$ und $y_0 > 0$, also $x_{y_0}+iy_0 \in T$, zeigt dies, dass $A' \subseteq \sin(T)$, und damit die Surjektivität von $\sin : T \to A$.
 
 
 
