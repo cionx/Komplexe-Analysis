@@ -221,6 +221,122 @@ Für alle $z \in \C$ ist
 
 
 
+\section{(Der Sinus im Komplexen)}
+Wir bemerken zunächst, dass für alle $z = x+iy \in \C$
+\begin{align*}
+ \sin(x+iy)
+ &= \frac{e^{i(x+iy)}-e^{-i(x+iy)}}{2i}
+ = \frac{e^{-y} e^{ix} - e^y e^{-ix}}{2i} \\
+ &= \frac{e^{-y}-e^y}{2i} \cos(x) + i \frac{e^{-y}+e^y}{2i} \sin(x) \\
+ &= \cosh(y) \sin(x) + i \sinh(y) \cos(x). \tag{1}\label{eq: sin umgeformt}
+\end{align*}
+Es sei nun
+\begin{gather*}
+ S^+ := \left\{z \in \C : \Re(z) = \frac{\pi}{2}, \Im(z) \geq 0\right\}
+      = \left\{\frac{\pi}{2} + \lambda i : \lambda \in \R, \lambda \geq 0\right\}, \\
+ S^- := \left\{z \in \C : \Re(z) = -\frac{\pi}{2}, \Im(z) \leq 0\right\}
+      = \left\{-\frac{\pi}{2} + \lambda i : \lambda \in \R, \lambda \leq 0\right\},
+\shortintertext{sowie}
+ T := \left\{z \in \C : |\Re(z)| < \frac{\pi}{2}\right\}
+    = \left\{x + iy : x \in \left(-\frac{\pi}{2},\frac{\pi}{2}\right), y \in \R \right\}.
+\end{gather*}
+Da für alle $\pi/2 + i\lambda \in S^+$
+\[
+ \sin\left(\frac{\pi}{2} + i\lambda\right)
+ = \sin\left(\frac{\pi}{2}\right) \cos(i\lambda) + \sin(i\lambda)\cos\left(\frac{\pi}{2}\right)
+ = \cos(i\lambda)
+ = \cosh(\lambda)
+\]
+und $\cosh : [0,\infty) \to [1,\infty)$ bijektiv ist, ist $\sin : S^+ \to [1,\infty) \subseteq \R$ bijektiv. Analog ist für alle $\pi/2 + i\lambda \in S^-$
+\[
+ \sin\left(-\frac{\pi}{2} + i\lambda\right)
+ = -\cosh(\lambda),
+\]
+also $\sin: S^- \to (-\infty, -1] \subseteq \R$ bijektiv.
+
+Um die Bijektivität $\sin : S^+ \cup S^- \cup T \to \C$ zu zeigen, genügt es nun zu zeigen, dass
+\[
+ \sin : T \to \C \smallsetminus ( (-\infty,-1] \cup [1,\infty)) =: A
+\]
+bijektiv ist.
+
+Hierfür bemerken wir zunächst, dass tatsächlich $\sin z \in A$ für alle $x+iy = z \in T$, denn da $x \in (-\pi/2, \pi/2)$ ist $\Re(\sin z) = \sin(x) \in (-1,1)$ für $y = 0$ und $\Im(z) \neq 0$ für $y \neq 0$.
+
+Als Nächstes zeigen wir, dass $\sin : T \to A$ injektiv ist. Seien $x+iy, x'+iy' \in T$ mit $\sin(x+iy) = \sin(x'+iy')$.
+
+Ist $x \neq x'$ und $y \neq y'$, so bemerken wir zunächst, dass aus \eqref{eq: sin umgeformt} folgt, dass
+\begin{align*}
+ \sgn(x) = \sgn(\cosh(y)\sin(x)) &= \sgn(\cosh(y')\sin(x')) = \sgn(x') \text{ und} \\
+ \sgn(y) = \sgn(\sinh(y)\cos(x)) &= \sgn(\sinh(y')\cos(x')) = \sgn(y').
+\end{align*}
+Es muss also bereits $|x| \neq |x'|$ und $|y| \neq |y'|$. Wir können dabei o.B.d.A. davon ausgehen, dass $|x| < |x'|$. Da daher $|\sin(x)| < |\sin(x')|$ folgt aus
+\[
+ \cosh(y)|\sin(x)| = \cosh(y')|\sin(x')|,
+\]
+dass $\cosh(y) > \cosh(y')$, also $|y| > |y'|$. Aus $|x| < |x'|$ und $|y| < |y'|$ folgt, dass $|\sinh(y)| > |\sinh(y')|$ und $\cos(x) > \cos(x')$, also
+\[
+ |\sinh(y)|\cos(x) > |\sinh(y')|\cos(x').
+\]
+Dies steht wegen \eqref{eq: sin umgeformt} im Widerspruch zu $\sin(x+iy)=\sin(x'+iy')$. Es muss also $x = x'$ oder $y = y'$.
+
+Ist $x = x'$, so folgt aus \eqref{eq: sin umgeformt}, dass $\sinh y  = \sinh y'$ (da $\cos(x) = \cos(x') \neq 0$), also $y = y'$ (denn $\sinh : \R \to \R$ ist bijektiv). Ist $y = y'$, so folgt aus \eqref{eq: sin umgeformt}, dass $\sin(x) = \sin(x')$ (denn $\cosh y = \cosh y' \neq 0$), also $x = x'$ (denn $\sin (-\pi/2,\pi/2) \to (-1,1)$ ist bijektiv).
+
+Dass zeigt, dass für $x+iy, x'+iy' \in T$ mit $\sin(x+iy) = \sin(x'+iy')$ bereits $x=x'$ und $y=y'$, also $x+iy = x'+iy'$. Das zeigt, dass $\sin : T \to A$ injektiv ist.
+
+Zuletzt zeigen wir, dass $\sin : T \to A$ surjektiv ist, also $A = \sin(T)$. Indem man $x=0$, bzw. $y=0$ fest wählt, wird aus \eqref{eq: sin umgeformt} klar, dass $i\R \in \sin(T)$, bzw. $(-1,1) \in \sin(T)$. Aus \eqref{eq: sin umgeformt} ergibt sich auch direkt, dass $\sin(\bar{z}) = \overline{\sin z}$ und $\sin(-z) = -\sin z$ für alle $z \in \C$. Da $T$ unter $z \mapsto -z$ und $z \mapsto \bar{z}$ abgeschlossen ist, genügt es daher zum Nachweis der Surjektivität zu zeigen, dass $A' \subseteq \sin(T)$ für
+\[
+ A' = \{z \in A : \Re(z), \Im(z) > 0\} = \{x+iy : x,y \in (0,\infty)\}.
+\]
+
+Sei $z \in A'$ beliebig aber fest. Man bemerke, dass $|z| > 0$ und $\arg(z) \in (0,\pi/2)$. Für $y > 0$ betrachten wir die Abbildung
+\[
+ \varphi_y : \left[0,\frac{\pi}{2}\right] \to \C, x \to \sin(x+iy) = \cosh(y)\sin(x)+i\sinh(y)\cos(x).
+\]
+Offenbar ist $\varphi_y(0) = i\sinh(y)$ und $\varphi_y(\pi/2) = \cosh(y)$. Insbesondere ist daher
+\[
+ \arg(\varphi_y(0)) = \frac{\pi}{2} \text{ und } \arg\left(\varphi_y\left(\frac{\pi}{2}\right)\right) = 0,
+\]
+wobei klar ist, dass $\arg \circ \varphi_y : [0,\pi/2] \to [0,\pi/2]$ stetig und streng monoton fallend ist. Insbesondere gibt es daher ein eindeutiges $x_y \in (0,\pi/2)$ mit $\arg(\varphi_y(x_y)) = \arg(z)$, wobei klar ist, dass $x_y$ stetig von $y$ abhängt.
+
+Wir bemerken, dass $\sinh(y) \leq |\varphi_y(x)| \leq \cosh(y)$ für alle $y > 0$ und $x \in [0,\pi/2]$, da nach \eqref{eq: sin umgeformt}
+\[
+ |\varphi_y(x)| = \sqrt{\cosh^2(y)\sin^2(x)+\sinh^2(y)\cos(x)}
+\]
+und
+\begin{align*}
+  &\,\sqrt{\cosh^2(y)\sin^2(x)+\sinh^2(y)\cos^2(x)} \\
+ =&\, \sqrt{(1+\sinh^2(y))\sin^2(x)+\sinh^2(y)\cos^2(x)} \\
+ =&\, \sqrt{\sin^2(x)+\sinh^2(y)}
+ \geq \sinh(y)
+\end{align*}
+sowie
+\begin{align*}
+  &\,\sqrt{\cosh^2(y)\sin^2(x)+\sinh^2(y)\cos^2(x)} \\
+ =&\, \sqrt{\cosh^2(y)\sin^2(x)+(\cosh^2(y)-1)\cos^2(x)} \\
+ =&\, \sqrt{\cosh^2(y)-\cos^2(x)}
+ \leq \cosh(y).
+\end{align*}
+Insbesondere gibt es daher $0 < y_- < y_+$, so dass
+$
+ |\varphi_{y_-}\left(x_{y_-}\right)| < |z| <  |\varphi_{y_+}\left(x_{y_+}\right)|.
+$
+Da $x_y$ stetig von $y$ abhängt, und damit auch $|\varphi_y(x_y)|$, gibt es daher nach dem Zwischenwertsatz ein $y_- < y_0 < y_+$ mit $|\varphi_{y_0}\left(x_{y_0}\right)| = |z|$. Da nach Konstruktion auch $\arg\left(\varphi_{y_0}\left(x_{y_0}\right)\right) = \arg(z)$ folgt damit, dass
+$
+ \varphi_{y_0}\left(x_{y_0}\right) = \sin(x_{y_0}+iy_0) = z.
+$
+Da $x_{y_0} \in (0,\pi/2)$ und $y_0 > 0$, also $x_{y_0}+iy_0 \in T$, zeigt dies die Surjektivität von $\sin : T \to A$.
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
