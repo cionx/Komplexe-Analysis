@@ -19,6 +19,105 @@
 
 
 
+\addtocounter{section}{3}
+
+
+
+
+
+\section{}
+
+
+\subsection{}
+Für alle $z = x+iy \in \C$ ist
+\begin{align*}
+ \exp(z)
+ &= \exp(x+iy) = \exp(x) \exp(iy) \\
+ &= \exp(x)(\cos(y) + i\sin(y)) \\
+ &= \exp(x)\cos(y) + i\exp(x)\sin(y). 
+\end{align*}
+Es ist daher klar, dass $\exp$, aufgefasst als Funktion $\R^2 \to \R^2$, glatt ist. Da
+\begin{align*}
+ (\Re(\exp))_x(x+iy) = \exp(x)&\cos(y) = (\Im(\exp))_y(x+iy) \text{ und} \\
+ (\Re(\exp))_y(x+iy) = -\exp(x)&\sin(y) = -(\Im(\exp))_x(x+iy).
+\end{align*}
+erfüllt $\exp$ die Cauchy-Riemannschen Differentialgleichungen auf ganz $\C$. Also ist $\exp$ auf $\C$ komplex differenzierbar mit
+\begin{align*}
+ \exp'(x+iy)
+ &= (\Re(\exp))_x(x+iy) + i(\Im(\exp))_x(x+iy) \\
+ &= \exp(x)\cos(y) + i\exp(x)\sin(y)
+ = \exp(x+iy).
+\end{align*}
+
+Wir bemerken, dass $\log : \C^- \to \R \times (-\pi,\pi)$ stetig ist: Für offene Intervalle $(a,b) \subseteq \R$ und $(c,d) \subseteq (-\pi,\pi)$ ist
+\begin{align*}
+  &\,\log^{-1}((a,b) \times (c,d)) \\
+ =&\, \exp((a,b) \times (c,d)) \\
+ =&\, \{z \in \C^- : \exp(a) < |z| < \exp(b) \text{ und } c < \arg(z) < d \} \\
+ =&\, |\cdot|^{-1}((\exp(a),\exp(b))) \cap \arg^{-1}((c,d))
+\end{align*}
+wegen der Stetigkeit von $\arg : \C^- \to (-\pi,\pi)$ und $|\cdot| : \C \to \R_{\geq 0}$ offen. Da die Produktmengen von offene Intervallen der obigen Form eine topologische Basis von $\R \times (-\pi,\pi)$ bilden, zeigt dies die Stetigkeit.
+
+Wir zeigen, dass $\log$ für alle $z \in \C^-$ komplex differenzierbar an $z$ ist, und dass $\log'(z) = 1/z$. Es sei $(z_n)$ eine Folge auf $\C^-$ mit $z_n \neq z$ für alle $n$ und $z_n \to z$ für $n \to \infty$. Wir setzen $w_n := \log(z_n)$ für alle $n$ und $w := \log(z)$. Wegen der Stetigkeit von $\log$ ist $w_n \to w$ für $n \to \infty$. Daher ist
+\begin{align*}
+ \lim_{n \to \infty} \frac{\log(z_n) - \log(z)}{z_n -z}
+ &= \lim_{n \to \infty} \frac{w_n - w}{\exp(w_n) - \exp(w)}
+ = \lim_{n \to \infty} \frac{1}{\frac{\exp(w_n)-\exp(w)}{w_n-w}} \\
+ &= \frac{1}{\exp'(w)}
+ = \frac{1}{\exp(w)}
+ = \frac{1}{z}.
+\end{align*}
+Aus der Beliebigkeit der Folge $(z_n)$ folgt die Behauptung.
+
+
+\subsection{}
+Für $z \in \C^-$ lässt sich der Ausdruck $z^n$ mit $n \in \Z$ sowohl als
+\[
+ z^n :=
+ \begin{cases}
+  \prod_{i=1}^n z & \text{falls } n > 0, \\
+                1 & \text{falls } n = 0, \\ 
+         1/z^{-n} & \text{falls } n < 0 ,
+ \end{cases}
+\]
+als auch als $\exp(n \log(z))$ verstehen. Diese beiden Bedeutungen sind infsofern konsistent zueinander, dass $\exp(n \log(z)) = z^n$ für all $n \in \Z$: Es ist klar, dass
+\begin{gather*}
+ \exp(0 \cdot \log(z)) = 1
+\shortintertext{und}
+ \exp(1 \cdot \log(z)) = z,
+\end{gather*}
+und daher auch
+\[
+ \exp(-1 \cdot \log(z)) \cdot z
+ = \exp(-1 \cdot \log(z)) \cdot \exp(\log(z))
+ = \exp(0)
+ = 1,
+\]
+also $\exp(-1 \cdot \log(z)) = 1/z = z^{-1}$. Für alle anderen $n \in \Z$ ergibt sich die Aussage induktiv aus diesen Fällen.
+
+Da $\exp$ auf $\C$ und $\log$ auf $\C^-$ komplex differenzierbar ist, ergibt sich aus der Kettenregel, dass für alle $s \in \C$ auch
+\[
+ f_s : \C^- \to \C \text{ mit } f_s(z) = z^s = \exp(s \log(z))
+\]
+komplex differenzierbar auf $\C^-$ ist, und
+\[
+ f'_s(z)
+ = \exp(s \log(z)) \cdot s \cdot \frac{1}{z}
+ = s \cdot z^{s-1}.
+\]
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
