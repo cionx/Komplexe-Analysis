@@ -19,7 +19,44 @@
 
 
 
-\addtocounter{section}{3}
+\addtocounter{section}{2}
+
+
+
+
+
+\section{}
+
+
+\addtocounter{subsection}{1}
+\subsection{}
+Da $f$ auf $U$ holomorph ist, ist nach den Cauchy-Riemannschen Differentialgleichungen $(\Re(f))_x = (\Im(f))_y$ und $(\Re(f))_y = -(\Im(f))_x$ auf $U$. Nimmt $f$ nur reelle Werte an, so ist $\Im(f) = 0$ und daher
+\[
+ (\Re(f))_x = (\Im(f))_y = 0 \text{ und } (\Re(f))_y = -(\Im(f))_x = 0 \text{ auf } U.
+\]
+Sehen wir $U \subseteq \R^2$, so ist daher $\nabla \Re(f) = 0$ auf $U$. Da $U$ wegzusammenhängend ist, ist damit $\Re(f)$ konstant auf $U$. Da $\Im(f) = 0$ ist deshalb $f$ konstant auf $U$.
+
+
+\addtocounter{subsection}{-2}
+\subsection{}
+Da $f$ und $g$ holomorph auf $U$ sind, ist auch $i(f-g)$ holomorph auf $U$. Da
+\[
+ \Im(i(f-g)) = \Re(f-g) = \Re(f)-\Re(g) = 0
+\]
+nimmt $i(f-g)$ auf $U$ nur reelle Werte an. Nach Aufgabenteil 2 ist $i(f-g)$ daher konstant auf $U$. Also ist auch $\Im(f-g) = -\Re(i(f-g))$ konstant auf $U$.
+
+
+\addtocounter{subsection}{1}
+\subsection{}
+Wir schreiben $f=u+iv$. Wir zeigen per Induktion über den Totalgrad $\deg u$, dass $f$ bereits ein komplexes Polynom ist.
+
+Ist $\deg u = 0$, so ist $u$ konstant. Nach Aufgabenteil 1 ist daher auch $v$ konstant. Daher ist $f = u+iv$ ein konstantes komplexes Polynom.
+
+Sei nun $n := \deg u$ mit $n \geq 1$ und es gelte die Aussage für $0,1,\ldots,n-1$. Da $f = u+iv$ auf $U$ holomorph ist, ist es auch $f' = u_x + i v_x$. Da $u$ ein Polynom in $x$ und $y$ ist, ist es auch $u_x$. Da $\deg f' < \deg f = n$ ist nach Induktionsvoraussetzung $f'$ ein komplexes Polynom, d.h. es ist $f'(z) = \sum_{k \geq 0} a_k z^k$ für alle $z \in U$ mit $a_k \in \C$ für alle $k \in \N$ und $a_k = 0$ für fast alle $k \in \N$. Für das komplexe Polynom $F : U \to \C$ mit
+\[
+ F(z) := \sum_{k \geq 0} \frac{a_k}{k+1} z^{k+1} \text{ für alle } z \in U
+\]
+ist $F' = f'$ auf $U$. Da $U$ zusammenhängend ist daher $F-f$ konstant auf $U$. Also ist $f$ ein komplexes Polynom.
 
 
 
