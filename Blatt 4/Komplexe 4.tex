@@ -19,7 +19,47 @@
 
 
 
-\addtocounter{section}{2}
+\addtocounter{section}{1}
+
+
+
+
+
+\section{}
+Schreiben wir $f_1(x+iy) := \Re(x+iy) = x$ als $f_1 = u_1+iv_1$, so ist $f_1$ offenbar glatt mit
+\[
+ (u_1)_x = 1 \text{ und } (v_1)_y = 0.
+\]
+Daher sind die Cauchy-Riemannschen Differentialgleichungen nirgends erfüllt, $f_1$ also nirgends komplex differenzierbar.
+
+
+Die Abbildung $f_2(z) := \cos(z^2)$ ist nach der Kettenregel auf ganz $\C$ komplex differenzierbar: Denn $z \mapsto z^2$ ist als Polynom auf ganz $\C$ differenzierbar, und $\cos$ ist wegen $\cos(z) = (e^{iz}+e^{-iz})/2$ nach Aufgabe 4 auf ganz $\C$ komplex differenzierbar.
+
+
+Die Abbildung $f_3(x+iy) := |x+iy|^2 = x^2 + y^2$ ist offenbar glatt, und mit $f_3 = u_3+iv_3$ ist für alle $x+iy \in \C$
+\begin{align*}
+ (u_3)_x(x+iy) = 2x &\text{ und } (v_3)_y(x+iy) = 0 \text{ sowie} \\
+ (u_3)_y(x+iy) = 2y &\text{ und } (v_3)_x(x+iy) = 0.
+\end{align*}
+Daher ist $f_3$ nach den Cauchy-Riamannschen Differentialgleichungen nur an $0$ komplex differenzierbar.
+
+
+Für die glatte Funktion $f_4(x+iy) := xy-2ixy$ mit $f_4 = u_4+iv_4$ ist
+\begin{align*}
+ (u_4)_x(x+iy) = y &\text{ und } (v_4)_y(x+iy) = -2x \text{ sowie} \\
+ (u_4)_y(x+iy) = x &\text{ und } (v_4)_x(x+iy) = -2y
+\end{align*}
+für alle $x+iy \in \C$. $f_4$ ist nur an $0$ komplex differenzierbar, da $f_4$ offenbar nur dort die Cauchy-Riemannschen Differentialgleichungen erfüllt.
+
+
+Für $f_5(x+iy) := \exp(\Re(x+iy)) = \exp(x)$ ist mit $f_5 = u_5+iv_5$
+\[
+ (u_5)_x(x+iy) = \exp(x) \text{ und } (v_5)_y(x+iy) = 0 \text{ für alle } x+iy \in \C.
+\]
+Da $\exp(x) \neq 0$ für alle $x \in \R$ ist daher $f_5$ nach den Cauchy-Riemannschen Differentialgleichungen nirgends komplex differenzierbar.
+
+
+
 
 
 
