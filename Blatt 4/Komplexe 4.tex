@@ -19,7 +19,95 @@
 
 
 
-\addtocounter{section}{1}
+\section{}
+
+
+\subsection{}
+Es seien $z_1, z_2, z_3, z_4 \in \C$ paarweise verschieden, beliebig aber fest, sowie $\lambda := \DV(z_1, z_2, z_3, z_4)$. Für die Transpositionen $(1\;2) \in S_4$ ist offenbar
+\[
+ \DV(z_2, z_1, z_3, z_4) = \frac{1}{\DV(z_1, z_2, z_3, z_4)} = \frac{1}{\lambda}.
+\]
+Durch ekelhaftes Herumrechnen, auf das ich keine Lust hatte, sollte sich ergeben, dass die Translationen $(1;3)$ und $(1;4)$ die Ausdrücke der Form
+\[
+ 1-\lambda \text{ und } \frac{\lambda}{1-\lambda}
+\]
+ergeben. Da diese drei Transpositionen die $S_4$ erzeugen, folgt die zu zeigende Aussage dann direkt, da die gegebenen $6$ möglichen Werte unter diesen Operationen abgeschlossen sind.
+
+
+
+
+\addtocounter{subsection}{1}
+
+
+\subsection{}
+Es genügt die Aussage für Elementarmatrizen nachzurechnen, da die $\GL_2(\C)$ von diesen erzeugt wird, und die Abbildung $\GL_2(\C) \to \{\text{Möbustransformationen}\}, A \mapsto g_A$ bekanntermaßen ein Gruppenhomomorphismus ist.
+
+Für die Matrix
+\[
+ I = \vect{0 & 1 \\ 1 & 0} \text{ mit } g_I(z) = \frac{1}{z}
+\]
+ist, sofern $z_1, z_2, z_3, z_4 \neq 0$,
+\begin{align*}
+  &\,\DV(g_I(z_1), g_I(z_2), g_I(z_3), g_I(z_4)) \\
+ =&\, \frac{(\frac{1}{z_1}-\frac{1}{z_3})(\frac{1}{z_2}-\frac{1}{z_4})}{(\frac{1}{z_2}-\frac{1}{z_3})(\frac{1}{z_1}-\frac{1}{z_4})}
+ = \frac{\frac{z_3 - z_1}{z_1 z_3} \cdot \frac{z_4 - z_2}{z_2 z_4}}{\frac{z_3 - z_2}{z_2 z_3} \cdot \frac{z_4 - z_1}{z_1 z_4}} \\
+ =&\, \frac{z_2 z_3 z_1 z_4}{z_1 z_3 z_2 z_4} \frac{(z_3 - z_1)(z_4-z_2)}{(z_3-z_2)(z_4-z_1)}
+ = \frac{(z_1 - z_3)(z_2 - z_4)}{(z_2 - z_3)(z_1 - z_4)} \\
+ =&\, \DV(z_1, z_2, z_3, z_4).
+\end{align*}
+Für die Elementarmatrizen der Form
+\[
+ S_a = \vect{a & 0 \\ 0 & 1} \text{ mit } a \in \C^\times \text{ und } g_{S_a}(z) = az
+\]
+und die Elementarmatrizen
+\[
+ T_b = \vect{1 & b \\ 0 & 1} \text{ mit } b \in \C \text{ und } g_{T_b}(z) = z+b
+\]
+ist die Invarianz offensichtlich.
+
+
+\subsection{}
+Für die Matrix
+\[
+ A := \vect{z_2-z_4 & -z_3(z_2-z_4) \\ z_2-z_3 & -z_4(z_2-z_3)} \in \C^{2 \times 2}
+\]
+ist $A \in \GL_2(\C)$, denn $z_2, z_3$ und $z_4$ sind paarweise verschieden, und somit
+\begin{align*}
+ \det(A)
+ &= -z_4(z_2-z_4)(z_2-z_3) + z_3(z_2-z_4)(z_2-z_3) \\
+ &= (z_3-z_4)(z_2-z_4)(z_2-z_3)
+ \neq 0.
+\end{align*}
+Daher ist für alle $z \in \C \setminus \{z_2, z_3, z_4\}$
+\[
+ \DV(z,z_2, z_3, z_4)
+ = \frac{(z-z_3)(z_2-z_4)}{(z_2-z_3)(z-z_4)}
+ = \frac{(z_2-z_4)z - z_3(z_2-z_4)}{(z_2-z_3)z-z_4(z_2-z_3)}
+ = g_A(z).
+\]
+Das zeigt, dass $\DV(z,z_2,z_3,z_4)$ eine Möbiustransformation ist.
+
+Es ist direkt klar, dass
+\[
+ \DV(z_2, z_2, z_3, z_4) = 1 \text{ und } \DV(z_3, z_2, z_3, z_4) = 0.
+\]
+An der Stelle $z = z_4$ ist $\DV(z,z_2,z_3,z_4)$ zwar streng genommen nicht definiert, es lässt sich aber $g_A$ eindeutig zu einem Homöomorphismus $\tilde{g}_A : \Ch \to \Ch$ fortsetzen. Es gilt $\tilde{g}_A(z_4) = \infty$, denn für eine Folge $(z_n)$ auf $\Ch \setminus \{z_4\}$ mit $z_n \to z_4$ für $n \to \infty$, und o.B.d.A. $z_n \neq \infty$ für alle $n \in \N$, gilt
+\[
+ \tilde{g}_A(z_n) = g_A(z_n)
+ = \frac{z_2 - z_4}{z_2 - z_3} \cdot \frac{z_n - z_3}{z_n -z_4}
+ = \frac{z_2 - z_4}{z_2 - z_3} \cdot \left(1 + \frac{z_4 - z_3}{z_n -z_4} \right),
+\]
+also $|\tilde{g}_A(z_n)| \to \infty$ in $\R$ für $n \to \infty$, und damit $\tilde{g}_A(z_n) \to \infty$ in $\Ch$ für $n \to \infty$. Da $\tilde{g}_A$ folgenstetig ist, folgt, dass $\tilde{g}_A(z_4) = \infty$.
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -182,21 +270,6 @@ komplex differenzierbar auf $\C^-$ ist, und
  = \exp(s \log(z)) \cdot s \cdot \frac{1}{z}
  = s \cdot z^{s-1}.
 \]
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
