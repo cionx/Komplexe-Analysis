@@ -18,6 +18,35 @@
 
 
 
+\section{(Kettenregel)}
+Sehen wir $U \subseteq \R^2$ und $f : U \to \R^2$, so ist $f$ stetig differenzierbar. Setzen wir
+\[
+ u := \Re(f) = f_1 \text{ und } v := \Im(f) = f_2
+\]
+so ist nach der Kettenregel für alle $t \in (0,1)$
+\begin{align*}
+ D(f \circ \gamma)(t)
+ &= Df(\gamma(t)) \cdot D\gamma(t) \\
+ &= \vect{u_x(\gamma(t)) & u_y(\gamma(t)) \\ v_x(\gamma(t)) & v_y(\gamma(t))} \cdot \vect{\gamma_1'(t) \\ \gamma_2'(t)} \\
+ &= \vect{u_x(\gamma(t)) \gamma_1'(t) + u_y(\gamma(t)) \gamma_2'(t) \\ v_x(\gamma(t)) \gamma_1'(t) + v_y(\gamma(t)) \gamma_2'(t)}.
+\end{align*}
+Schreiben wir diesen Ausdruck wieder als komplexe Zahl, und nutzen wir die Cauchy-Riemannschen Differentialgleichungen $u_x = v_y$ und $u_y = -v_x$, so erhalten wir, dass für alle $t \in (0,1)$
+\begin{align*}
+  &\; (f \circ \gamma)'(t) \\
+ =&\; u_x(\gamma(t)) \gamma_1'(t) + u_y(\gamma(t))\gamma_2'(t) + i(v_x(\gamma(t)) \gamma_1'(t) + v_y(\gamma(t)) \gamma_2'(t)) \\
+ =&\; u_x(\gamma(t)) \gamma_1'(t) - v_x(\gamma(t))\gamma_2'(t) + i(v_x(\gamma(t)) \gamma_1'(t) + u_x(\gamma(t)) \gamma_2'(t)) \\
+ =&\; (u_x(\gamma(t))+iv_x(\gamma(t))) \cdot (\gamma_1'(t)+i\gamma_2'(t)) \\
+ =&\; f'(\gamma(t)) \cdot \gamma'(t).
+\end{align*}
+Es gilt also überraschenderweise die Kettenregel.
+
+
+
+
+
+
+
+
 
 
 \end{document}
