@@ -44,6 +44,55 @@ Es gilt also überraschenderweise die Kettenregel.
 
 
 
+\section{(Ausdehnung von Kurven)}
+Wir gehen davon aus, dass $\gamma$ zweimal differenzierbar ist, und dass
+\[
+ \Psi, \Phi : (0,1) \times \R \to \R
+\]
+differenzierbar sind. Setzen wir
+\[
+ \gamma_1 := \Re(\gamma) \text{ und } \gamma_2 := \Im(\gamma),
+\]
+so ist
+\begin{align*}
+ u(x,y) &:= \Re(f(x,y)) = \gamma_1(x) + \Psi(x,y)\gamma_1'(x) - \Phi(x,y)\gamma_2'(x), \\
+ v(x,y) &:= \Im(f(x,y)) = \gamma_2(x) + \Psi(x,y)\gamma_2'(x) + \Phi(x,y)\gamma_1'(x).
+\end{align*}
+Daher ist für alle $(x,y) \in (0,1) \times \R$
+\begin{align*}
+ u_x(x,y) =&\; \gamma_1'(x) + \Psi_x(x,y)\gamma_1'(x) + \Psi(x,y)\gamma_1''(x) \\
+           &\; - \Phi_x(x,y)\gamma_2'(x) - \Phi(x,y)\gamma_2''(x), \\
+ v_x(x,y) =&\; \gamma_2'(x) + \Psi_x(x,y)\gamma_2'(x) + \Psi(x,y)\gamma_2''(x) \\
+           &\; + \Phi_x(x,y)\gamma_1'(x) + \Phi(x,y)\gamma_1''(x), \\
+ u_y(x,y) =&\; \Psi_y(x,y)\gamma_1'(x) - \Phi_y(x,y)\gamma_2'(x), \\
+ v_y(x,y) =&\; \Psi_y(x,y)\gamma_2'(x) + \Phi_y(x,y)\gamma_2'(x).
+\end{align*}
+Dass $f$ holomorph ist, ist äquivalent dazu, dass $f$ die Cauchy-Riemannschen Differentialgleichungen erfüllt, dass also $u_x = v_y$ und $u_y = -v_x$.
+
+Für den Fall, dass $\gamma(t) = t^2$, bemerken wir, dass sich $\gamma$ zu $f : (0,1) \times \R \to \C$ mit $f(z) = z^2$ fortsetzen lässt. Wählen wir
+\begin{align*}
+ &\Psi(x,y) : (0,1) \times \R \to \R, (x,y) \mapsto -\frac{y^2}{2x} \text{ und}\\
+ &\Phi(x,y) : (0,1) \times \R \to \R, (x,y) \mapsto y,
+\end{align*}
+so haben wir $\Psi(x,0) = \Psi_y(x,0) = \Phi(x,0) = 0$ für alle $x \in (0,1)$ und für alle $x+iy \in (0,1) \times \R$
+\begin{align*}
+ f(x+iy) &= (x+iy)^2 = x^2-y^2 + i2xy \\
+         &= x^2 + \left(-\frac{y^2}{2x}\right) \cdot 2x + iy \cdot 2x \\
+         &= \gamma(x) + \Psi(x,y)\gamma'(x) + i\Phi(x,y)\gamma'(x).
+\end{align*}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
