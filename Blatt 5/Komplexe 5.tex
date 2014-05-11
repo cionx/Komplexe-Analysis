@@ -85,6 +85,43 @@ so haben wir $\Psi(x,0) = \Psi_y(x,0) = \Phi(x,0) = 0$ für alle $x \in (0,1)$ u
 
 
 
+\section{(Potenzreihenentwicklung)}
+Für alle $z \in \C$ mit $|z| < 1$ ist bekanntermaßen
+\[
+ \frac{1}{1-z} = \sum_{k=0}^\infty z^k.
+\]
+Für $f : \C \setminus \{1,-1,i\} \to \C$ mit
+\[
+ f(z) := \frac{1}{z^3 - iz^2 - z + i}
+\]
+hat eine Potenzreihenentwicklung um die Entwicklungstelle $0$ einen Konvergenzradius von höchstens $1$, da $f$ bei $1,-1$ und $i$ Singularitäten aufweist. Für jedes $z \in \C$ mit $|z| < 1$ ist auch $|z^4| = |z|^4 < 1$, und somit
+\begin{align*}
+ f(z)
+ &= \frac{1}{z^3 - iz^2 - z + i}
+ = \frac{z-(-i)}{(z^3+(-i)z^2+(-i)^2z+(-i)^3)(z-(-i))} \\
+ &= \frac{z+i}{z^4-1} = -(z+i)\frac{1}{1-z^4} = -(z+i) \sum_{k=0}^\infty \left(z^4\right)^k \\
+ &= \sum_{k=0}^\infty -(z+i)z^{4k} = \sum_{k=0}^\infty -z^{4k+1}-iz^{4k} = \sum_{n=0}^\infty a_n z^n,
+\end{align*}
+mit
+\[
+ a_n =
+ \begin{cases}
+  -i & \text{falls } n \equiv 0 \bmod 4, \\
+  -1 & \text{falls } n \equiv 1 \bmod 4, \\
+   0 & \text{sonst}.
+ \end{cases}
+\]
+Also lässt sich $f$ um $0$ mit einer Potenzreihe mit Konvergenzradius $1$ entwickeln.
+
+
+
+
+
+
+
+
+
+
 
 
 
