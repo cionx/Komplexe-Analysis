@@ -117,6 +117,134 @@ Also lässt sich $f$ um $0$ mit einer Potenzreihe mit Konvergenzradius $1$ entwi
 
 
 
+\section{(Wirtingerkalkül)}
+
+
+\subsection{}
+Es ist klar, dass der Differentialoperator $\partd{}{x}$ auf $C^1(\Omega, \C)$ $\R$-linear ist. Da für alle $f \in C^1(\Omega, \C)$ und $z \in \Omega$
+\[
+ \partd{(if)}{x}(z) = {\lim_{h \to 0}}\frac{if(z+h)-if(z)}{h} = i\lim_{h \to 0} \frac{f(z+h)-f(z)}{h} = i\partd{f}{x}(z)
+\]
+ist $\partd{}{x}$ auch $\C$-linear. Analog ergibt sich, dass auch $\partd{}{y}$ $\C$-linear ist. Daher sind auch $\partd{}{z}$ und $\partd{}{\bar{z}}$ $\C$-linear.
+
+Für den Differentialoperator $\partd{}{x}$ gilt die Produktregel, denn schreiben wir
+\[
+ u^f := \Re(f), v^f := \Im(f) \text{ und } u^g := \Re(g), v^g := \Im(g),
+\]
+so ist
+\begin{align*}
+ \partd{}{x}(fg)
+ &= \partd{}{x}\left( u^f u^g - v^f v^g + i u^f v^g + i u^g v^f \right) \\
+ &= u^f_x u^g + u^f u^g_x - v^f_x v^g - v^f v^g_x + i u^f_x v^g + i u^f v^g_x + i u^g_x v^f + i u^g v^f_x \\
+ &= (u^f_x+iv^f_x)(u^g+iv^g) + (u^f+iv^f)(u^g_x+iv^g_x) \\
+ &= \partd{f}{x}g + f\partd{g}{x}.
+\end{align*}
+Analog zeigt man auch, dass für $\partd{}{y}$ die Produktregel gilt. Da daher
+\begin{align*}
+ \partd{}{z}(fg)
+ &= \frac{1}{2}\left( \partd{}{x}(fg) - i\partd{}{y}(fg) \right) \\
+ &= \frac{1}{2}\left( \partd{f}{x}g + f\partd{g}{x} - i\partd{f}{y}g - if\partd{g}{y} \right) \\
+ &= \frac{1}{2}\left( \partd{f}{x}-i\partd{f}{y} \right)g + \frac{1}{2}f\left( \partd{g}{x}-i\partd{g}{y} \right) \\
+ &= \partd{f}{z}g + f\partd{g}{z}
+\end{align*}
+gilt auch für $\partd{}{z}$ die Produktregel. Da damit
+\begin{align*}
+ &\; \partd{f}{z} = \partd{}{z}\left(\frac{f}{g}g\right) = \partd{(f/g)}{z}g + \frac{f}{g}\partd{g}{z} \\
+ \Rightarrow&\; \partd{f}{z}g = \partd{(f/g)}{z}g^2 + f\partd{g}{z} \\
+ \Rightarrow&\; \partd{(f/g)}{z} = \frac{\partd{f}{z}g-f\partd{g}{z}}{g^2}.
+\end{align*}
+gilt für $\partd{}{z}$ auch die Quotientenregel. Analog zeigt man, dass $\partd{}{\bar{z}}$ die Quotienten- und Produktregel erfüllt.
+
+
+\subsection{}
+Schreiben wir $u := \Re(f)$ und $v := \Im(f)$, so folgt aus der $\C$-Linearität von $\partd{}{x}$ und $\partd{}{y}$, dass
+\begin{equation}\label{eq: dfdz}
+ \begin{aligned}
+  \partd{f}{z}
+  &= \frac{1}{2}\left( \partd{f}{x}-i\partd{f}{y} \right)
+  = \frac{1}{2}\left( u_x+iv_x - i(u_y+iv_y) \right) \\
+  &= \frac{1}{2}\left( u_x+v_y + i(v_x-u_y) \right)
+ \end{aligned}
+\end{equation}
+und
+\begin{equation}\label{eq: dfdkz}
+ \begin{aligned}
+  \partd{f}{\bar{z}}
+  &= \frac{1}{2}\left( \partd{f}{x}+i\partd{f}{y} \right)
+  = \frac{1}{2}\left( u_x+iv_x + i(u_y+iv_y) \right) \\
+  &= \frac{1}{2}\left( u_x-v_y + i(v_x+u_y) \right).
+ \end{aligned}
+\end{equation}
+
+Da $\Re\left(\bar{f}\right) = u$ und $\Im\left(\bar{f}\right) = -v$ ist daher
+\[
+ \overline{\left(\partd{f}{\bar{z}}\right)}
+ = \frac{1}{2}\left( u_x-v_y - i(v_x+u_y) \right)
+ = \partd{\bar{f}}{z}
+\]
+und
+\[
+ \overline{\left(\partd{f}{z}\right)}
+ = \frac{1}{2}\left( u_x+v_y - i(v_x-u_y) \right)
+ = \partd{\bar{f}}{\bar{z}}.
+\]
+
+
+\subsection{}
+$f$ ist genau dann holomorph auf $\Omega$, wenn $f$ auf $\Omega$ die Cauchy-Riemannschen Differentialgleichungen erfüllt, also wenn
+\[
+ u_x = v_y \text{ und } u_y = -v_x.
+\]
+Dies ist nach \eqref{eq: dfdkz} offenbar äquivalent dazu, dass $\del f / \del \bar{z} = 0$. Ist $f$ holomorph auf $\Omega$, so gilt außerdem
+\[
+ f' = u_x + iv_x = v_y - iu_y = -i(u_y + iv_y),
+\]
+also $\del f / \del z = f'$.
+
+
+\subsection{}
+Da $\Re\left(\bar{f}\right) = u$ und $\Im\left(\bar{f}\right) = -v$ ist $\bar{f}$ nach den Cauchy-Riemannschen Differentialgleichungen genau dann holomorph auf $\Omega$, wenn
+\[
+ u_x = (-v)_y = -v_y \text{ und } u_y = -(-v_x) = v_x.
+\]
+Nach \eqref{eq: dfdz} ist dies äquivalent dazu, dass $\del f / \del z = 0$. Ist $\bar{f}$ holomorph, so gilt nicht, wie auf dem Zettel behautet, $\del \bar{f} / \del \bar{z} = \left(\bar{f}\right)'$, sondern $\del \bar{f} / \del z = \left(\bar{f}\right)'$, da
+\[
+ f' = u_x - i v_x = -v_y -v_x,
+\]
+und damit
+\[
+ \partd{\bar{f}}{z}
+ = \frac{1}{2}\left( u_x-v_y - i(v_x+u_y) \right)
+ = \left(\bar{f}\right)'.
+\]
+
+
+\subsection{}
+Es ist
+\[
+ \det \vect{u_x & u_y \\ v_x & v_y} = u_x v_y - v_x u_y,
+\]
+sowie
+\begin{align*}
+ &\; \det \vect{\partd{f}{z} & \partd{f}{\bar{z}} \\ \partd{\bar{f}}{z} & \partd{\bar{f}}{\bar{z}}} \\
+ =&\; \frac{1}{4}\left( u_x + v_y + iv_x - iu_y \right)\left( u_x + v_y - iv_x + iu_y \right) \\
+  &\; -\frac{1}{4}\left( u_x - v_y + iv_x + iu_y \right)\left( u_x - v_y -iv_x - iu_y \right) \\
+ =&\; \frac{1}{4}\left( (u_x+v_y)^2 - (iv_x-iu_y)^2 - (u_x-v_y)^2 + (iv_x+iu_y)^2 \right) \\
+ =&\; \frac{1}{4}\left( 4 u_x v_y + 4 i^2 v_x u_y \right)
+ = u_x v_y - v_x u_y
+\end{align*}
+und
+\begin{align*}
+ |f_z|^2 - |f_{\bar{z}}|^2
+ &= \frac{1}{4} \left|x_x+v_y+i(v_x-u_y)\right|^2 - \frac{1}{4} \left|u_x-v_y+i(v_x+u_y)\right|^2 \\
+ &= \frac{1}{4} \left( (u_x+v_y)^2 + (v_x-u_y)^2 - (u_x-v_y)^2 - (v_x+u_y)^2 \right) \\
+ &= \frac{1}{4} \left( 4 u_x v_y - 4 v_x u_y \right)
+ = u_x v_y - v_x u_y.
+\end{align*}
+
+
+
+
 
 
 
