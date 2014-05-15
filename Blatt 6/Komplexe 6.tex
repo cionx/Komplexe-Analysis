@@ -18,4 +18,45 @@
 
 
 
+\section{(Konvergenzradius)}
+Da
+\[
+ \sum_n a_n z^{2n}
+ = \sum_n a_n \left(z^2\right)^n
+\]
+beträgt der Konvergenzradius der Reihe $\sum_n a_n z^{2n}$
+\[
+ \sqrt{R} \text{ falls } R < \infty \quad \text{und} \quad \infty \text{ falls } R = \infty.
+\]
+Für die Reihe $\sum_n a_n^2 z^n$ ergibt sich der Konvergenzradius
+\[
+ \frac{1}{\limsup_{n \to \infty} \sqrt[n]{|a_n^2|}}
+ = \left( \frac{1}{\limsup_{n \to \infty} \sqrt{|a_n|}} \right)^2
+ = R^2,
+\]
+wobei wir $\infty^2 = \infty$ verstehen. Kombiniert ergibt sich damit, dass $\sum_n a_n^2 z^{2n}$ einen Konvergenzradius von $R$ hat.
+
+Da
+\[
+ 0 < R = \frac{1}{\limsup_{n \to \infty} \sqrt[n]{|a_n|}}
+\]
+ist
+\[
+ \limsup_{n \to \infty} \sqrt[n]{|a_n|} < \infty.
+\]
+Deshalb ist
+\[
+ \frac{1}{\limsup_{n \to \infty} \sqrt[n]{|a_n|/n!}}
+ = \frac{\lim_{n \to \infty} \sqrt[n]{n!}}{\limsup_{n \to \infty} \sqrt[n]{|a_n|}}
+ = \infty.
+\]
+Der Konvergenzradius von $\sum_n (a_n/n!) z^n$ ist daher $\infty$.
+
+
+
+
+
+
+
+
 \end{document}
