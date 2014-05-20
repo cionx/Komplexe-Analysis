@@ -94,6 +94,39 @@ also
 
 
 
+\section{(Bessel-Funktion)}
+Für alle $z \in \C$ ist
+\[
+ J(z)
+ = \sum_{n=0}^\infty \frac{(-1)^n}{(n!)^2} \left( \frac{z}{2} \right)^n
+ = \sum_{n=0}^\infty \frac{(-1)^n}{(n!)^2 4^n} z^{2n}.
+\]
+
+Da
+\[
+ \limsup_{n \to \infty} \left( \frac{1}{(n!)^2 4^n} \right) = \limsup_{n \to \infty} \frac{1}{4 (n!)^{2/n}} = 0
+\]
+hat die Potenzreihe einen Konvergenzradius von $\infty$. Wir können $J$ daher summandenweise ableiten. Deshalb ist
+\begin{align*}
+  J'(z) &= \sum_{n=1}^\infty \frac{(-1)^n 2n}{(n!)^2 4^n}{z^{2n-1}} \text{ und} \\
+ J''(z) &= \sum_{n=1}^\infty \frac{(-1)^n 2n (2n-1)}{(n!)^2 4^n} z^{2n-2}.
+\end{align*}
+Daher ist für alle $z \in \C$
+\begin{align*}
+ z^2 J''(z) + z J'(z)
+ &= \sum_{n=1}^\infty (-1)^n \frac{2n(2n-1)}{(n!)^2 4^n} z^{2n} + \sum_{n=1}^\infty (-1)^n \frac{2n}{(n!)^2 4^n} z^{2n} \\
+ &= \sum_{n=1}^\infty (-1)^n \frac{2n(2n-1)}{(n!)4^n} z^{2n} + (-1)^n \frac{2n}{(n!)^2 4^n} z^{2n} \\
+ &= \sum_{n=1}^\infty (-1)^n \frac{4n^2}{(n!)^2 4^n} \\
+ &= \sum_{n=1}^\infty (-1)^n \frac{1}{((n-1)!)^2 4^{n-1}} z^{2n} \\
+ &= \sum_{n=1}^\infty (-1)^{n+1} \frac{1}{(n!)^2 4^n} z^{2n+2} \\
+ &= -z^2 \sum_{n=0}^\infty \frac{(-1)^n}{(n!)^2 4^n} z^{2n} \\
+ &= -z^2 J(z).
+\end{align*}
+
+
+
+
+
 
 
 
