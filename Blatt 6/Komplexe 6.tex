@@ -3,11 +3,11 @@
 
 \usepackage{../mystyle}
 
-\setromanfont[Mapping=tex-text]{Linux Libertine O}
+\setromanfont[Mapping=tex-text]{Comic Sans MS}
 % \setsansfont[Mapping=tex-text]{DejaVu Sans}
 % \setmonofont[Mapping=tex-text]{DejaVu Sans Mono}
 
-\title{\sc Einführung in die Komplexe Analysis \\ \Large Blatt 6}
+\title{Einführung in die Komplexe Analysis \\ \Large Blatt 6}
 \author{Jendrik Stelzner}
 \date{\today}
 
@@ -34,7 +34,7 @@ Für die Reihe $\sum_\mc{N} a_\mc{N}^2 \mc{Z}^\mc{N}$ ergibt sich der Konvergenz
  = \left( \frac{1}{\limsup_{\mc{N} \to \infty} \sqrt{|a_\mc{N}|}} \right)^2
  = R^2,
 \]
-wobei wir $\infty^2 = \infty$ verstehen. Kombiniert ergibt sich damit, dass $\sum_\mc{N} a_\mc{N}^2 \mc{Z}^{2\mc{N}}$ einen Konvergenzradius von $R$ hat.
+wobei wir $\infty^2 = \infty$ verstehen. Kombiniert ergibt sich damit, dass die Reihe $\sum_\mc{N} a_\mc{N}^2 \mc{Z}^{2\mc{N}}$ einen Konvergenzradius von $R$ hat.
 
 Da
 \[
@@ -67,7 +67,10 @@ einen Häufungspunkt. Daher besitzt $(y_\alpha)$ ein konvergentes Teilnetz $h : 
 \[
  \sum_{\mf{n}=0}^\infty a_\mf{n} \mc{Z}_\beta^\mf{n} \to \sum_{\mf{n}=0}^\infty a_\mf{n}.
 \]
-Inbesondere enthält $(\mc{Z}_\beta)$ eine Teilfolge $(\mf{z}_\mf{n})_{\mf{n} \in \N}$ auf $[0,1)$. Inbesondere gilt für diese $\mf{z}_k \to 1$ und $\sum_{\mf{n}=0}^\infty a_\mf{n} \mf{z}_k^\mf{n} \to \sum_{\mf{n}=0}^\infty a_\mf{n}$. Da $(\mf{z}_\mf{n})$ ein Teilnetz des Zetanetzs $(\mf{X}_\alpha)$ ist, zeigt dies, dass $\sum_{\mf{n}=0}^{\infty} a_\mf{n} \mf{X}_k^\mf{n=0} \to \sum_\mf{n}^\infty a_\mf{n}$ für jede Folge $(\mf{X}_k)_{k \in \N}$ auf $[0,1)$ mit $\mf{X}_k \to 1$. Dies ist aber äquivalent zu $\lim_{\mf{X} \uparrow 1} \sum_{\mf{n}=0}^\infty a_\mf{n} \mf{X}^\mf{n} = \sum_{\mf{n}=0}^\infty a_\mf{n}$.
+Inbesondere enthält $(\mc{Z}_\beta)$ eine Teilfolge $(\mf{z}_\mf{n})_{\mf{n} \in \N}$ auf $[0,1)$. Inbesondere gilt für diese $\mf{z}_k \to 1$ und $\sum_{\mf{n}=0}^\infty a_\mf{n} \mf{z}_k^\mf{n} \to \sum_{\mf{n}=0}^\infty a_\mf{n}$. Da $(\mf{z}_\mf{n})$ ein Teilnetz des Zetanetzs $(\mf{X}_\alpha)$ ist, zeigt dies, dass $\sum_{\mf{n}=0}^{\infty} a_\mf{n} \mf{X}_k \to \sum_\mf{n}^\infty a_\mf{n}$ für jede Folge $(\mf{X}_k)_{k \in \N}$ auf $[0,1)$ mit $\mf{X}_k \to 1$. Dies ist aber äquivalent zu
+\[
+ \lim_{\mf{X} \uparrow 1} \sum_{\mf{n}=0}^\infty a_\mf{n} \mf{X}^\mf{n} = \sum_{\mf{n}=0}^\infty a_\mf{n}.
+\]
 
 
 Wir betrachten die Potenzreihe von $\mc{F} = \log$ an der Stelle $\mf{X}_0 := 1$
