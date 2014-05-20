@@ -127,6 +127,47 @@ Daher ist für alle $z \in \C$
 
 
 
+\section{(Konstruktion von Stammfunktionen)}
+Für alle $z \in \C$ ist
+\begin{align*}
+ F(z)
+ &= \int_{\gamma_z} \xi e^{\xi} \dd{\xi}
+ = \int_0^1 tz e^{tz} z \dd{t}
+ = \int_0^1 t z^2 e^{tz} \dd{t} \\
+ &= \left[ (tz-1) e^{tz} \right]_{t=0}^1
+ = (z-1)e^z + 1.
+\end{align*}
+$F$ ist offenbar auf ganz $\C$ holomorph.
+
+Für alle $z \in \C$ ist
+\begin{align*}
+ G(z)
+ &= \int_{\gamma_z} |\xi|^2 \dd{\xi}
+ = \int_0^1 |tz|^2 z \dd{t}
+ = |z|^2 z \int_0^1 t^2 \dd{t}
+ = \frac{1}{3} |z|^2 z
+ = \frac{1}{3} z^2 \overline{z}.
+\end{align*}
+$G$ ist an $z = 0$ komplex differenzierbar, da
+\[
+ \lim_{h \to 0} \frac{G(h)-G(0)}{h}
+ = \lim_{h \to 0} \frac{|h|^2 h}{3h}
+ = \lim_{h \to 0} \frac{1}{3} |h|^2
+ = 0.
+\]
+Für $z \neq 0$ ist $G$ nicht komplex differenzierbar an $z$, denn ansonsten wäre nach der Quotientenregel auch
+\[
+ \overline{z} = \frac{G(z)}{(1/3)z^2}
+\]
+komplex differenzierbar an $z$, was aber nicht gilt.
+
+
+
+
+
+
+
+
 
 
 
