@@ -165,6 +165,114 @@ komplex differenzierbar an $z$, was aber nicht gilt.
 
 
 
+\section{(Interpretation des komplexen Kurvenintegrals)}
+
+
+\subsection{}
+Wir bemerken zunächst, dass die Parametrisierung über $\Img \gamma$, d.h. $\nu : \Img \gamma \to \C$, problematisch ist, da $\gamma$ nicht notwendigerweise injektiv ist, also $\Img \gamma$ Selbstschnitte haben kann. Wir parametrisieren daher $\nu$ über $[a,b]$.
+
+Damit $\nu$ eine Normale ist, muss
+\[
+ \scal{\nu(t), \gamma'(t)} = 0 \text{ für alle } t \in [a,b].
+\]
+Daher muss
+\[
+ \nu(t) \in \left( \R \gamma'(t) \right)^{\bot} = i \R \gamma'(t) \text{ für alle } t \in [a,b].
+\]
+(Man beachte, dass $\gamma'(t) \neq 0$ für alle $t \in [a,b]$, und dass Multiplikation mit $i$ der Rotation um $\pi/2$ entspricht.) Da $\nu$ auch normiert ist, muss
+\[
+ \nu(t) = \pm i \frac{\gamma'(t)}{|\gamma'(t)|} \text{ für alle } t \in [a,b].
+\]
+Da
+\[
+ |\gamma'(t)| = |J_\gamma(t)^T J_\gamma(t)| \text{ für alle } t \in [a,b]
+\]
+zeigt dies die Aussage.
+
+
+\subsection{}
+Wir bemerken zunächst, dass
+\[
+ \mf{v}_f = \vect{\Re(f) \\ \Im(f)}
+\]
+gewählt werden muss, damit die Aussage gilt. Denn schreiben wir
+\[
+ \gamma_1 := \Re(\gamma), \gamma_2 = \Im(\gamma), u = \Re(f) \text{ und } v = \Im(f),
+\]
+so ist
+\begin{align*}
+ &\, \int_\gamma f(z) \dd{z}
+ = \int_a^b f(\gamma(t)) \gamma'(t) \dd{t} \\
+ =&\, \int_a^b u(\gamma(t))\gamma_1'(t) - v(\gamma(t))\gamma_2'(t) \dd{t}
+   + i \int_a^b u(\gamma(t)) \gamma_2'(t) + v(\gamma(t)) \gamma_1'(t) \dd{t}.
+\end{align*}
+Da für alle $t \in [a,b]$
+\begin{align*}
+ \nu(t) = -i\left|J_\gamma(t)^T J_\gamma(t)\right|^{-1/2} \gamma'(t) = |\gamma'(t)|^{-1/2} (\gamma_2'(t) - i\gamma_1'(t))
+\end{align*}
+ist
+\begin{align*}
+ \int_\gamma \mf{v}_{\overline{f}} \dd{x}
+ &= \int_a^b \scal{\mf{v}_{\overline{f}}(\gamma(t)), \gamma'(t)} \dd{t} \\
+ &= \int_a^b u(\gamma(t))\gamma_1'(t) - v(\gamma(t))\gamma_2'(t) \dd{t}
+\end{align*}
+und
+\begin{align*}
+ \int_\gamma \mf{v}_{\overline{f}} \dd{\vec{\sigma}}
+ &= \int_a^b \scal{\mf{v}_{\overline{f}}(\gamma(t)), \nu(t)} \left|J_\gamma(t)^T J_\gamma(t)\right|^{1/2} \dd{t} \\
+ &= \int_a^b u(\gamma(t))\gamma_2'(t) + v(\gamma(t))\gamma_1'(t) \dd{t}.
+\end{align*}
+Das zeigt die Gleichheit.
+
+
+\subsection{}
+Es ist
+\[
+ \diver( \mf{v}_{\overline{f}} )
+ = u_x + (-v)_y
+ = u_x - v_y
+ = 0,
+\]
+denn aus der Holomorphie von $f$ folgt, dass $f$ die Cauchy-Riemannschen Differentialgleichungen
+\[
+ u_x = v_y \quad \text{und} \quad u_y = -v_x
+\]
+erfüllt.
+
+
+\subsection{}
+Nach dem Satz von Gauß ist in der gegeben Situation
+\[
+ \Im\left( \int_\gamma f(z) \dd{z} \right)
+ = \int_\gamma \mf{v}_{\overline{f}} \dd{\vec{\sigma}}
+ = \int_\Omega \diver(\mf{v}_{\overline{f}}) \dd{\lambda_2}
+ = \int_\Omega 0 \dd{\lambda_2}
+ = 0.
+\]
+Da $f$ holomorph ist, ist auch $if$ holomorph. Daher ist nach analoger Argumentation
+\[
+ \Re\left( \int_\gamma f(z) \dd{z} \right)
+ = \Im\left( i \int_\gamma f(z) \dd{z} \right)
+ = \Im\left( \int_\gamma if(z) \dd{z} \right)
+ = 0.
+\]
+Also ist
+\[
+ \int_\gamma f(z) \dd{z} = 0.
+\]
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
