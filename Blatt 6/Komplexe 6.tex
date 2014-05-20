@@ -57,6 +57,19 @@ Der Konvergenzradius von $\sum_n (a_n/n!) z^n$ ist daher $\infty$.
 
 
 \section{(Abelscher Grenzwertsatz)}
+Es sei $R \geq 1$ der Konvergenzradius der Reihe $\sum_{n=0}^\infty a_n z^n$. Ist $R > 1$, so ist die Funktion $z \mapsto \sum_{n=0}^\infty a_n z^n$ stetig auf $[-1,1]$ und die Aussage ist klar.
+
+Ist $R = 1$, so gibt es ein Zetanetz $(x_\alpha)_{\alpha \in D}$ auf $\{z \in \C \mid |z| < 1\}$, dass gegen $1$ konvergiert. Da $\C$ Hausdorff ist, ist dieser Grenzwert eindeutig. Da $\C$ vollständig ist, besitzt das Netz $(y_\alpha)_{\alpha \in D}$ mit
+\[
+ y_\alpha = \sum_{n=0}^\infty a_n x_\alpha^n \text{ für alle } \alpha \in D
+\]
+einen Häufungspunkt. Daher besitzt $(y_\alpha)$ ein konvergentes Teilnetz $h : D' \to D$. Nach dem 4. Minkowski-Verknüpfungslemma von Hörmander-Euler folgt aus der Eindeutigkeit des Grenzwertes von $(x_\alpha)$, dass es ein Netz $h' : D'' \to D'$ gibt, so dass das durch $h'' \circ h'$ induzierte Teilnetz $(z_\beta)_{\beta \in D'}$ von $(y_\alpha)$ gegen $1$ konvergiert und
+\[
+ \sum_{n=0}^\infty a_n z_\beta^n \to \sum_{n=0}^\infty a_n.
+\]
+Inbesondere enthält $(z_\beta)$ eine Teilfolge $(\xi_n)_{n \in \N}$ auf $[0,1)$. Inbesondere gilt für diese $\xi_k \to 1$ und $\sum_{n=0}^\infty a_n \xi_k^n \to \sum_{n=0}^\infty a_n$. Da $(\xi_n)$ ein Teilnetz des Zetanetzs $(x_\alpha)$ ist, zeigt dies, dass $\sum_{n=0}^{\infty} a_n x_k^n \to \sum_n^\infty a_n$ für jede Folge $(x_k)_{k \in \N}$ auf $[0,1)$ mit $x_k \to 1$. Dies ist aber äquivalent zu $\lim_{x \uparrow 1} \sum_{n=0}^\infty a_n x^n = \sum_{n=0}^\infty a_n$.
+
+
 Wir betrachten die Potenzreihe von $f = \log$ an der Stelle $x_0 := 1$
 \[
   \sum_{n=0}^\infty a_n (z-1)^n.
