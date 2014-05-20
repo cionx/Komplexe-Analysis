@@ -56,6 +56,55 @@ Der Konvergenzradius von $\sum_n (a_n/n!) z^n$ ist daher $\infty$.
 
 
 
+\section{(Abelscher Grenzwertsatz)}
+Wir betrachten die Potenzreihe $\sum_{n=0}^\infty a_n (z-1)^n$ von $f = \log$ an der Stelle $x_0 := 1$. Induktiv ergibt sich, dass
+\[
+ f^{(n)}(x) = (-1)^{n-1} \frac{(n-1)!}{x^n} \text{ für alle } n \geq 1 \text{ und } x > 0.
+\]
+Daher ist
+\[
+ f(x_0) = 0 \text{ und } f^{(n)}(x_0) = (-1)^{n-1}(n-1)! \text{ für alle } n \geq 1.
+\]
+Die Koeffizienten $(a_n)_{n \in \N}$ der Potenzreihe sind daher
+\[
+ a_0 = f(x_0) = 0 \text{ und } a_n = \frac{f^{(n)}(x_0)}{n!} = \frac{(-1)^{n-1}}{n} \text{ für alle } n \geq 1.
+\]
+Da
+\[
+ \limsup_{n \to \infty} |a_n|^{1/n} = \limsup_{n \to \infty} \frac{1}{n^{1/n}} = 1
+\]
+beträgt der Konvergenzradius der Reihe $1/1 = 1$. Für alle $z \in \C$ mit $|z-1| < 1$ konvergiert daher die Reihe $\sum_{n=0}^\infty a_n (z-1)^n$ (dies folgt auch direkt daraus, dass $(a_n)$ eine Nullfolge ist) und es ist
+\[
+ \sum_{n=0}^\infty a_n (x-1)^n = \log(x) \text{ für alle } 0 < x < 2.
+\]
+Bekanntermaßen konvergiert die Reihe $\sum_{n=0}^\infty a_n = \sum_{n=1}^\infty (-1)^{n-1}/n$ nach dem Leibniz-Kriterium (aus Analysis 1 ist diese Reihe auch als alternierende harmonische Reihe bekannt). Nach dem Abelschen Grenzwertsatz ist daher
+\[
+ \log(2)
+ = \lim_{x \uparrow 2} \log(x)
+ = \lim_{x \uparrow 2} \sum_{n=0}^\infty a_n (x-1)^n
+ = \sum_{n=0}^\infty a_n
+ = \sum_{n=1}^\infty \frac{(-1)^{n-1}}{n},
+\]
+also
+\[
+ \sum_{n=1}^\infty \frac{(-1)^n}{n} = -\log(2).
+\]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
