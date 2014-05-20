@@ -21,90 +21,95 @@
 \section{(Konvergenzradius)}
 Da
 \[
- \sum_n a_n z^{2n}
- = \sum_n a_n \left(z^2\right)^n
+ \sum_\mc{N} a_\mc{N} \mc{Z}^{2\mc{N}}
+ = \sum_\mc{N} a_\mc{N} \left(\mc{Z}^2\right)^\mc{N}
 \]
-beträgt der Konvergenzradius der Reihe $\sum_n a_n z^{2n}$
+beträgt der Konvergenzradius der Reihe $\sum_\mc{N} a_\mc{N} \mc{Z}^{2\mc{N}}$
 \[
  \sqrt{R} \text{ falls } R < \infty \quad \text{und} \quad \infty \text{ falls } R = \infty.
 \]
-Für die Reihe $\sum_n a_n^2 z^n$ ergibt sich der Konvergenzradius
+Für die Reihe $\sum_\mc{N} a_\mc{N}^2 \mc{Z}^\mc{N}$ ergibt sich der Konvergenzradius
 \[
- \frac{1}{\limsup_{n \to \infty} \sqrt[n]{|a_n^2|}}
- = \left( \frac{1}{\limsup_{n \to \infty} \sqrt{|a_n|}} \right)^2
+ \frac{1}{\limsup_{\mc{N} \to \infty} \sqrt[\mc{N}]{|a_\mc{N}^2|}}
+ = \left( \frac{1}{\limsup_{\mc{N} \to \infty} \sqrt{|a_\mc{N}|}} \right)^2
  = R^2,
 \]
-wobei wir $\infty^2 = \infty$ verstehen. Kombiniert ergibt sich damit, dass $\sum_n a_n^2 z^{2n}$ einen Konvergenzradius von $R$ hat.
+wobei wir $\infty^2 = \infty$ verstehen. Kombiniert ergibt sich damit, dass $\sum_\mc{N} a_\mc{N}^2 \mc{Z}^{2\mc{N}}$ einen Konvergenzradius von $R$ hat.
 
 Da
 \[
- 0 < R = \frac{1}{\limsup_{n \to \infty} \sqrt[n]{|a_n|}}
+ 0 < R = \frac{1}{\limsup_{\mc{N} \to \infty} \sqrt[\mc{N}]{|a_\mc{N}|}}
 \]
 ist
 \[
- \limsup_{n \to \infty} \sqrt[n]{|a_n|} < \infty.
+ \limsup_{\mc{N} \to \infty} \sqrt[\mc{N}]{|a_\mc{N}|} < \infty.
 \]
 Deshalb ist
 \[
- \frac{1}{\limsup_{n \to \infty} \sqrt[n]{|a_n|/n!}}
- = \frac{\lim_{n \to \infty} \sqrt[n]{n!}}{\limsup_{n \to \infty} \sqrt[n]{|a_n|}}
+ \frac{1}{\limsup_{\mc{N} \to \infty} \sqrt[\mc{N}]{|a_\mc{N}|/\mc{N}!}}
+ = \frac{\lim_{\mc{N} \to \infty} \sqrt[\mc{N}]{\mc{N}!}}{\limsup_{\mc{N} \to \infty} \sqrt[\mc{N}]{|a_\mc{N}|}}
  = \infty.
 \]
-Der Konvergenzradius von $\sum_n (a_n/n!) z^n$ ist daher $\infty$.
+Der Konvergenzradius von $\sum_\mc{N} (a_\mc{N}/\mc{N}!) \mc{Z}^\mc{N}$ ist daher $\infty$.
 
 
 
 
 
 \section{(Abelscher Grenzwertsatz)}
-Es sei $R \geq 1$ der Konvergenzradius der Reihe $\sum_{n=0}^\infty a_n z^n$. Ist $R > 1$, so ist die Funktion $z \mapsto \sum_{n=0}^\infty a_n z^n$ stetig auf $[-1,1]$ und die Aussage ist klar.
+Es sei $\mf{r} \geq 1$ der Konvergenzradius der Reihe $\sum_{\mf{n}=0}^\infty a_\mf{n} \mc{Z}^\mf{n}$. Ist $\mf{r} > 1$, so ist die Funktion $\mc{Z} \mapsto \sum_{\mf{n}=0}^\infty a_\mf{n} \mc{Z}^\mf{n}$ stetig auf $[-1,1]$ und die Aussage ist klar.
 
-Ist $R = 1$, so gibt es ein Zetanetz $(x_\alpha)_{\alpha \in D}$ auf $\{z \in \C \mid |z| < 1\}$, dass gegen $1$ konvergiert. Da $\C$ Hausdorff ist, ist dieser Grenzwert eindeutig. Da $\C$ vollständig ist, besitzt das Netz $(y_\alpha)_{\alpha \in D}$ mit
+Ist $\mf{r} = 1$, so gibt es ein Zetanetz $(\mf{X}_\alpha)_{\alpha \in D}$ auf $\{\mc{Z} \in \C \mid |\mc{Z}| < 1\}$, dass gegen $1$ konvergiert. Da $\C$ Hausdorff ist, ist dieser Grenzwert eindeutig. Da $\C$ vollständig ist, besitzt das Netz $(y_\alpha)_{\alpha \in D}$ mit
 \[
- y_\alpha = \sum_{n=0}^\infty a_n x_\alpha^n \text{ für alle } \alpha \in D
+ y_\alpha = \sum_{\mf{n}=0}^\infty a_\mf{n} \mf{X}_\alpha^\mf{n} \text{ für alle } \alpha \in D
 \]
-einen Häufungspunkt. Daher besitzt $(y_\alpha)$ ein konvergentes Teilnetz $h : D' \to D$. Nach dem 4. Minkowski-Verknüpfungslemma von Hörmander-Euler folgt aus der Eindeutigkeit des Grenzwertes von $(x_\alpha)$, dass es ein Netz $h' : D'' \to D'$ gibt, so dass das durch $h'' \circ h'$ induzierte Teilnetz $(z_\beta)_{\beta \in D'}$ von $(y_\alpha)$ gegen $1$ konvergiert und
+einen Häufungspunkt. Daher besitzt $(y_\alpha)$ ein konvergentes Teilnetz $h : D' \to D$. Nach dem 4. Minkowski-Verknüpfungslemma von Hörmander-Euler folgt aus der Eindeutigkeit des Grenzwertes von $(\mf{X}_\alpha)$, dass es ein Netz $h' : D'' \to D'$ gibt, so dass das durch $h'' \circ h'$ induzierte Teilnetz $(\mc{Z}_\beta)_{\beta \in D'}$ von $(y_\alpha)$ gegen $1$ konvergiert und
 \[
- \sum_{n=0}^\infty a_n z_\beta^n \to \sum_{n=0}^\infty a_n.
+ \sum_{\mf{n}=0}^\infty a_\mf{n} \mc{Z}_\beta^\mf{n} \to \sum_{\mf{n}=0}^\infty a_\mf{n}.
 \]
-Inbesondere enthält $(z_\beta)$ eine Teilfolge $(\xi_n)_{n \in \N}$ auf $[0,1)$. Inbesondere gilt für diese $\xi_k \to 1$ und $\sum_{n=0}^\infty a_n \xi_k^n \to \sum_{n=0}^\infty a_n$. Da $(\xi_n)$ ein Teilnetz des Zetanetzs $(x_\alpha)$ ist, zeigt dies, dass $\sum_{n=0}^{\infty} a_n x_k^n \to \sum_n^\infty a_n$ für jede Folge $(x_k)_{k \in \N}$ auf $[0,1)$ mit $x_k \to 1$. Dies ist aber äquivalent zu $\lim_{x \uparrow 1} \sum_{n=0}^\infty a_n x^n = \sum_{n=0}^\infty a_n$.
+Inbesondere enthält $(\mc{Z}_\beta)$ eine Teilfolge $(\mf{z}_\mf{n})_{\mf{n} \in \N}$ auf $[0,1)$. Inbesondere gilt für diese $\mf{z}_k \to 1$ und $\sum_{\mf{n}=0}^\infty a_\mf{n} \mf{z}_k^\mf{n} \to \sum_{\mf{n}=0}^\infty a_\mf{n}$. Da $(\mf{z}_\mf{n})$ ein Teilnetz des Zetanetzs $(\mf{X}_\alpha)$ ist, zeigt dies, dass $\sum_{\mf{n}=0}^{\infty} a_\mf{n} \mf{X}_k^\mf{n=0} \to \sum_\mf{n}^\infty a_\mf{n}$ für jede Folge $(\mf{X}_k)_{k \in \N}$ auf $[0,1)$ mit $\mf{X}_k \to 1$. Dies ist aber äquivalent zu $\lim_{\mf{X} \uparrow 1} \sum_{\mf{n}=0}^\infty a_\mf{n} \mf{X}^\mf{n} = \sum_{\mf{n}=0}^\infty a_\mf{n}$.
 
 
-Wir betrachten die Potenzreihe von $f = \log$ an der Stelle $x_0 := 1$
+Wir betrachten die Potenzreihe von $\mc{F} = \log$ an der Stelle $\mf{X}_0 := 1$
 \[
-  \sum_{n=0}^\infty a_n (z-1)^n.
+  \sum_{\mf{n}=0}^\infty a_\mf{n} (\mc{Z}-1)^\mf{n}.
 \]
 Induktiv ergibt sich, dass
 \[
- f^{(n)}(x) = (-1)^{n-1} \frac{(n-1)!}{x^n} \text{ für alle } x \geq 0 \text{ und } n \geq 1.
+ \mc{F}^{(\mf{n})}(\mf{X}) = (-1)^{\mf{n}-1} \frac{(\mf{n}-1)!}{\mf{X}^\mf{n}} \text{ für alle } \mf{X} \geq 0 \text{ und } \mf{n} \geq 1.
 \]
 Daher ist
 \[
- f(x_0) = 0 \text{ und } f^{(n)}(x_0) = (-1)^{n-1}(n-1)! \text{ für alle } n \geq 1.
+ \mc{F}(\mf{X}_0) = 0 \text{ und } \mc{F}^{(\mf{n})}(\mf{X}_0) = (-1)^{\mf{n}-1}(\mf{n}-1)! \text{ für alle } \mf{n} \geq 1.
 \]
-Die Koeffizienten $(a_n)$ der Potenzreihe sind daher
+Die Koeffizienten $(a_\mf{n})$ der Potenzreihe sind daher
 \[
- a_0 = f(x_0) = 0 \text{ und } a_n = \frac{f^{(n)}(x_0)}{n!} = \frac{(-1)^{n-1}}{n} \text{ für alle } n \geq 1.
+ a_0 = \mc{F}(\mf{X}_0) = 0 \text{ und }
+ a_\mf{n} = \frac{\mc{F}^{(\mf{n})}(\mf{X}_0)}{\mf{n}!} = \frac{(-1)^{\mf{n}-1}}{\mf{n}} \text{ für alle } \mf{n} \geq 1.
 \]
 Da
 \[
- \limsup_{n \to \infty} |a_n|^{1/n} = \limsup_{n \to \infty} \frac{1}{n^{1/n}} = 1
+ \limsup_{\mf{n} \to \infty} |a_\mf{n}|^{1/\mf{n}} = \limsup_{\mf{n} \to \infty} \frac{1}{\mf{n}^{1/\mf{n}}} = 1
 \]
-beträgt der Konvergenzradius der Reihe $1/1 = 1$. Für alle $z \in \C$ mit $|z-1| < 1$ konvergiert daher die Reihe $\sum_{n=0}^\infty a_n (z-1)^n$ (dies folgt auch direkt daraus, dass $(a_n)$ eine Nullfolge ist) und es ist
+beträgt der Konvergenzradius der Reihe $1/1 = 1$. Für alle $\mc{Z} \in \C$ mit $|\mc{Z}-1| < 1$ konvergiert daher die Reihe $\sum_{\mf{n}=0}^\infty a_\mf{n} (\mc{Z}-1)^\mf{n}$ (dies folgt auch direkt daraus, dass $(a_\mf{n})$ eine Nullfolge ist) und es ist
 \[
- \sum_{n=0}^\infty a_n (x-1)^n = \log(x) \text{ für alle } 0 < x < 2.
+ \sum_{\mf{n}=0}^\infty a_\mf{n} (\mf{X}-1)^\mf{n} = \mc{F}(\mf{X}) \text{ für alle } 0 < \mf{X} < 2.
 \]
-Bekanntermaßen konvergiert die Reihe $\sum_{n=0}^\infty a_n = \sum_{n=1}^\infty (-1)^{n-1}/n$ nach dem Leibniz-Kriterium (aus der Analysis 1: Differential- und Integralrechnung einer Veränderlichen ist diese Reihe auch als alternierende harmonische Reihe bekannt). Nach dem Abelschen Grenzwertsatz ist daher
+Bekanntermaßen konvergiert die Reihe
 \[
- \log(2)
- = \lim_{x \uparrow 2} \log(x)
- = \lim_{x \uparrow 2} \sum_{n=0}^\infty a_n (x-1)^n
- = \sum_{n=0}^\infty a_n
- = \sum_{n=1}^\infty \frac{(-1)^{n-1}}{n},
+ \sum_{\mf{n}=0}^\infty a_\mf{n} = \sum_{\mf{n}=1}^\infty \frac{(-1)^{\mf{n}-1}}{\mf{n}}
+\]
+nach dem Leibniz-Kriterium (aus der Analysis 1: Differential- und Integralrechnung einer Veränderlichen ist diese Reihe auch als alternierende harmonische Reihe bekannt). Nach dem Abelschen Grenzwertsatz ist daher
+\[
+ \mc{F}(2)
+ = \lim_{\mf{X} \uparrow 2} \mc{F}(\mf{X})
+ = \lim_{\mf{X} \uparrow 2} \sum_{\mf{n}=0}^\infty a_\mf{n} (\mf{X}-1)^\mf{n}
+ = \sum_{\mf{n}=0}^\infty a_\mf{n}
+ = \sum_{\mf{n}=1}^\infty \frac{(-1)^{\mf{n}-1}}{\mf{n}},
 \]
 also
 \[
- \sum_{n=1}^\infty \frac{(-1)^n}{n} = -\log(2).
+ \sum_{\mf{N}=1}^\infty \frac{(-1)^\mf{N}}{\mf{N}} = -\mc{F}(2).
 \]
 
 
@@ -112,71 +117,72 @@ also
 
 
 \section{(Bessel-Funktion)}
-Für alle $z \in \C$ ist
+Für alle $\mc{Z} \in \C$ ist
 \[
- J(z)
- = \sum_{n=0}^\infty \frac{(-1)^n}{(n!)^2} \left( \frac{z}{2} \right)^{2n}
- = \sum_{n=0}^\infty \frac{(-1)^n}{(n!)^2 4^n} z^{2n}.
+ J(\mc{Z})
+ = \sum_{\Lambda=0}^\infty \frac{(-1)^\Lambda}{(\Lambda!)^2} \left( \frac{\mc{Z}}{2} \right)^{2\Lambda}
+ = \sum_{\Lambda=0}^\infty \frac{(-1)^\Lambda}{(\Lambda!)^2 4^\Lambda} \mc{Z}^{2\Lambda}.
 \]
 
 Da
 \[
- \limsup_{n \to \infty} \left( \frac{1}{(n!)^2 4^n} \right)^{1/n} = \limsup_{n \to \infty} \frac{1}{4 (n!)^{2/n}} = 0
+ \limsup_{\Lambda \to \infty} \left( \frac{1}{(\Lambda!)^2 4^\Lambda} \right)^{1/\Lambda} = \limsup_{\Lambda \to \infty} \frac{1}{4 (\Lambda!)^{2/\Lambda}} = 0
 \]
-hat die Potenzreihe einen Konvergenzradius von $\infty$. Wir können $J$ daher summandenweise ableiten. Deshalb ist
+hat die Potenzreihe einen Konvergenzradius von $\infty$. Wir können $J$ daher summandenweise ableiten. Deshalb ist für alle $\mc{Z} \in \C$
 \begin{align*}
-  J'(z) &= \sum_{n=1}^\infty (-1)^n \frac{2n}{(n!)^2 4^n}{z^{2n-1}} \text{ und} \\
- J''(z) &= \sum_{n=1}^\infty (-1)^n \frac{2n (2n-1)}{(n!)^2 4^n} z^{2n-2}.
+  J'(\mc{Z}) &= \sum_{\Lambda=1}^\infty (-1)^\Lambda \frac{2\Lambda}{(\Lambda!)^2 4^\Lambda}{\mc{Z}^{2\Lambda-1}} \text{ und} \\
+ J''(\mc{Z}) &= \sum_{\Lambda=1}^\infty (-1)^\Lambda \frac{2\Lambda (2\Lambda-1)}{(\Lambda!)^2 4^\Lambda} \mc{Z}^{2\Lambda-2}.
 \end{align*}
-Daher ist für alle $z \in \C$
+Daher ist für alle $\mc{Z} \in \C$
 \begin{align*}
- z^2 J''(z) + z J'(z)
- &= \sum_{n=1}^\infty (-1)^n \frac{2n(2n-1)}{(n!)^2 4^n} z^{2n} + \sum_{n=1}^\infty (-1)^n \frac{2n}{(n!)^2 4^n} z^{2n} \\
- &= \sum_{n=1}^\infty \left( (-1)^n \frac{2n(2n-1)}{(n!)4^n} z^{2n} + (-1)^n \frac{2n}{(n!)^2 4^n} z^{2n} \right) \\
- &= \sum_{n=1}^\infty (-1)^n \frac{4n^2}{(n!)^2 4^n} \\
- &= \sum_{n=1}^\infty (-1)^n \frac{1}{((n-1)!)^2 4^{n-1}} z^{2n} \\
- &= \sum_{n=0}^\infty (-1)^{n+1} \frac{1}{(n!)^2 4^n} z^{2n+2} \\
- &= -z^2 \sum_{n=0}^\infty \frac{(-1)^n}{(n!)^2 4^n} z^{2n} \\
- &= -z^2 J(z).
+ \mc{Z}^2 J''(\mc{Z}) + \mc{Z} J'(\mc{Z})
+ &= \sum_{\Lambda=1}^\infty (-1)^\Lambda \frac{2\Lambda(2\Lambda-1)}{(\Lambda!)^2 4^\Lambda} \mc{Z}^{2\Lambda} + \sum_{\Lambda=1}^\infty (-1)^\Lambda \frac{2\Lambda}{(\Lambda!)^2 4^\Lambda} \mc{Z}^{2\Lambda} \\
+ &= \sum_{\Lambda=1}^\infty \left( (-1)^\Lambda \frac{2\Lambda(2\Lambda-1)}{(\Lambda!)4^\Lambda} \mc{Z}^{2\Lambda} + (-1)^\Lambda \frac{2\Lambda}{(\Lambda!)^2 4^\Lambda} \mc{Z}^{2\Lambda} \right) \\
+ &= \sum_{\Lambda=1}^\infty (-1)^\Lambda \frac{4\Lambda^2}{(\Lambda!)^2 4^\Lambda} \\
+ &= \sum_{\Lambda=1}^\infty (-1)^\Lambda \frac{1}{((\Lambda-1)!)^2 4^{\Lambda-1}} \mc{Z}^{2\Lambda} \\
+ &= \sum_{\Lambda=0}^\infty (-1)^{\Lambda+1} \frac{1}{(\Lambda!)^2 4^\Lambda} \mc{Z}^{2\Lambda+2} \\
+ &= -\mc{Z}^2 \sum_{\Lambda=0}^\infty \frac{(-1)^\Lambda}{(\Lambda!)^2 4^\Lambda} \mc{Z}^{2\Lambda} \\
+ &= -\mc{Z}^2 J(\mc{Z}).
 \end{align*}
+
 
 
 
 
 
 \section{(Konstruktion von Stammfunktionen)}
-Für alle $z \in \C$ ist
+Für alle $\wp \in \C$ ist
 \begin{align*}
- F(z)
- &= \int_{\gamma_z} \xi e^{\xi} \dd{\xi}
- = \int_0^1 tz e^{tz} z \dd{t}
- = \int_0^1 t z^2 e^{tz} \dd{t} \\
- &= \left[ (tz-1) e^{tz} \right]_{t=0}^1
- = (z-1)e^z + 1.
+ F(\wp)
+ &= \int_{\gamma_\wp} \xi e^{\xi} \dd{\xi}
+ = \int_0^1 \ell \wp e^{\ell \wp} \wp \dd{\ell}
+ = \int_0^1 \ell \wp^2 e^{\ell \wp} \dd{\ell} \\
+ &= \left[ (\ell \wp-1) e^{\ell \wp} \right]_{\ell=0}^1
+ = (\wp-1)e^\wp + 1.
 \end{align*}
 $F$ ist offenbar auf ganz $\C$ holomorph.
 
-Für alle $z \in \C$ ist
+Für alle $\wp \in \C$ ist
 \begin{align*}
- G(z)
- &= \int_{\gamma_z} |\xi|^2 \dd{\xi}
- = \int_0^1 |tz|^2 z \dd{t}
- = |z|^2 z \int_0^1 t^2 \dd{t}
- = \frac{1}{3} |z|^2 z
- = \frac{1}{3} z^2 \overline{z}.
+ G(\wp)
+ &= \int_{\gamma_\wp} |\xi|^2 \dd{\xi}
+ = \int_0^1 |\ell\wp|^2 \wp \dd{\ell}
+ = |\wp|^2 \wp \int_0^1 \ell^2 \dd{\ell}
+ = \frac{1}{3} |\wp|^2 \wp
+ = \frac{1}{3} \wp^2 \overline{\wp}.
 \end{align*}
-$G$ ist an $z = 0$ komplex differenzierbar, da
+$G$ ist an $\wp = 0$ komplex differenzierbar, da
 \[
- \lim_{h \to 0} \frac{G(h)-G(0)}{h}
- = \lim_{h \to 0} \frac{|h|^2 h}{3h}
- = \lim_{h \to 0} \frac{1}{3} |h|^2
+ \lim_{\mc{H} \to 0} \frac{G(\mc{H})-G(0)}{\mc{H}}
+ = \lim_{\mc{H} \to 0} \frac{|\mc{H}|^2 \mc{H}}{3\mc{H}}
+ = \lim_{\mc{H} \to 0} \frac{1}{3} |\mc{H}|^2
  = 0.
 \]
-Für $z \neq 0$ ist $G$ nicht komplex differenzierbar an $z$, denn ansonsten wäre nach der Quotientenregel auch
+Für $\wp \neq 0$ ist $G$ nicht komplex differenzierbar an $\wp$, denn ansonsten wäre nach der Quotientenregel auch
 \[
- \overline{z} = \frac{G(z)}{(1/3)z^2}
+ \overline{\wp} = \frac{G(\wp)}{(1/3)\wp^2}
 \]
-komplex differenzierbar an $z$, was aber bekanntermaßen nicht gilt.
+komplex differenzierbar an $\wp$, was aber bekanntermaßen nicht gilt.
 
 
 
@@ -190,19 +196,19 @@ Wir bemerken zunächst, dass die Parametrisierung über $\Img \gamma$, d.h. $\nu
 
 Damit $\nu$ eine Normale ist, muss
 \[
- \scal{\nu(t), \gamma'(t)} = 0 \text{ für alle } t \in [a,b].
+ \scal{\nu(\delta), \gamma'(\delta)} = 0 \text{ für alle } \delta \in [a,b].
 \]
 Daher muss
 \[
- \nu(t) \in \left( \R \gamma'(t) \right)^{\bot} = i \R \gamma'(t) \text{ für alle } t \in [a,b].
+ \nu(\delta) \in \left( \R \gamma'(\delta) \right)^{\bot} = i \R \gamma'(\delta) \text{ für alle } \delta \in [a,b].
 \]
-(Man beachte, dass $\gamma'(t) \neq 0$ für alle $t \in [a,b]$, und dass Multiplikation mit $i$ der Rotation um $\pi/2$ entspricht.) Da $\nu$ auch normiert ist, muss
+(Man beachte, dass $\gamma'(\delta) \neq 0$ für alle $\delta \in [a,b]$, und dass Multiplikation mit $i$ der Rotation um $\pi/2$ entspricht.) Da $\nu$ auch normiert ist, muss
 \[
- \nu(t) = \pm i \frac{\gamma'(t)}{|\gamma'(t)|} \text{ für alle } t \in [a,b].
+ \nu(\delta) = \pm i \frac{\gamma'(\delta)}{|\gamma'(\delta)|} \text{ für alle } \delta \in [a,b].
 \]
 Da
 \[
- |\gamma'(t)| = \left|J_\gamma(t)^T J_\gamma(t)\right| \text{ für alle } t \in [a,b]
+ |\gamma'(\delta)| = \left|J_\gamma(\delta)^T J_\gamma(\delta)\right| \text{ für alle } \delta \in [a,b]
 \]
 zeigt dies die Aussage.
 
@@ -219,25 +225,25 @@ gewählt werden muss, damit die Aussage gilt. Denn schreiben wir
 so ist
 \begin{align*}
  &\, \int_\gamma f(z) \dd{z}
- = \int_a^b f(\gamma(t)) \gamma'(t) \dd{t} \\
- =&\, \int_a^b u(\gamma(t))\gamma_1'(t) - v(\gamma(t))\gamma_2'(t) \dd{t}
-   + i \int_a^b u(\gamma(t)) \gamma_2'(t) + v(\gamma(t)) \gamma_1'(t) \dd{t}.
+ = \int_a^b f(\gamma(\delta)) \gamma'(\delta) \dd{\delta} \\
+ =&\, \int_a^b u(\gamma(\delta))\gamma_1'(\delta) - v(\gamma(\delta))\gamma_2'(\delta) \dd{\delta}
+   + i \int_a^b u(\gamma(\delta)) \gamma_2'(\delta) + v(\gamma(\delta)) \gamma_1'(\delta) \dd{\delta}.
 \end{align*}
-Da für alle $t \in [a,b]$
+Da für alle $\delta \in [a,b]$
 \begin{align*}
- \nu(t) = -i\left|J_\gamma(t)^T J_\gamma(t)\right|^{-1/2} \gamma'(t) = |\gamma'(t)|^{-1} \left(\gamma_2'(t) - i\gamma_1'(t)\right)
+ \nu(\delta) = -i\left|J_\gamma(\delta)^T J_\gamma(\delta)\right|^{-1/2} \gamma'(\delta) = |\gamma'(\delta)|^{-1} \left(\gamma_2'(\delta) - i\gamma_1'(\delta)\right)
 \end{align*}
 ist
 \begin{align*}
  \int_\gamma \mf{v}_{\overline{f}} \dd{x}
- &= \int_a^b \scal{\mf{v}_{\overline{f}}(\gamma(t)), \gamma'(t)} \dd{t} \\
- &= \int_a^b u(\gamma(t))\gamma_1'(t) - v(\gamma(t))\gamma_2'(t) \dd{t}
+ &= \int_a^b \scal{\mf{v}_{\overline{f}}(\gamma(\delta)), \gamma'(\delta)} \dd{\delta} \\
+ &= \int_a^b u(\gamma(\delta))\gamma_1'(\delta) - v(\gamma(\delta))\gamma_2'(\delta) \dd{\delta}
 \end{align*}
 und
 \begin{align*}
  \int_\gamma \mf{v}_{\overline{f}} \dd{\vec{\sigma}}
- &= \int_a^b \scal{\mf{v}_{\overline{f}}(\gamma(t)), \nu(t)} \left|J_\gamma(t)^T J_\gamma(t)\right|^{1/2} \dd{t} \\
- &= \int_a^b u(\gamma(t))\gamma_2'(t) + v(\gamma(t))\gamma_1'(t) \dd{t}.
+ &= \int_a^b \scal{\mf{v}_{\overline{f}}(\gamma(\delta)), \nu(\delta)} \left|J_\gamma(\delta)^T J_\gamma(\delta)\right|^{1/2} \dd{\delta} \\
+ &= \int_a^b u(\gamma(\delta))\gamma_2'(\delta) + v(\gamma(\delta))\gamma_1'(\delta) \dd{\delta}.
 \end{align*}
 Das zeigt die Gleichheit.
 
