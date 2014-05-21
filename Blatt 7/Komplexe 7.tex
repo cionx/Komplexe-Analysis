@@ -18,4 +18,40 @@
 
 
 
+\section{(Konvergenzverhalten von Potenzreihen)}
+Wir können o.B.d.A. davon ausgehen, dass die Entwicklungsstelle der Potenzreihe bei $z_0 = 0$ liegt. Es sei $(a_n)_{n \in \N}$ die Folge der Koeffizienten der Potenzreihe, d.h.
+\[
+ f(z) = \sum_{n=0}^\infty a_n z^n \text{ für alle } z \in \C.
+\]
+Da diese Reihe auf ganz $\C$ gleichmäßig konvergiert gibt es ein $M \in \N, M \geq 1$, so dass
+\[
+ \left| \sum_{n=m}^\infty a_n z^n \right| < \frac{1}{2} \text{ für alle } z \in \C, m \geq M.
+\]
+
+Für alle $m \geq M$ ist daher für alle $z \in \C$
+\begin{align*}
+ \left| a_m z^m \right|
+ &= \left| \sum_{n=m}^\infty a_n z^n - \sum_{n=m+1}^\infty a_n z^n \right| \\
+ &\leq \left| \sum_{n=m}^\infty a_n z^n \right| + \left| \sum_{n=m+1}^\infty a_n z^n \right|
+ < 1,
+\end{align*}
+also für alle $x \in \R, x > 0$
+\[
+ |a_m| < \frac{1}{x^m} \text{ für alle } m \geq M.
+\]
+Da $1/x^m \to 0$ für $x \to \infty$ (denn $m \geq M \geq 1$) folgt, dass
+\[
+ a_m = 0 \text{ für alle } m \geq M.
+\]
+Daher ist $f$ ein Polynom (dessen Grad höchstens $M-1$ ist).
+
+
+
+
+
+
+
+
+
+
 \end{document}
