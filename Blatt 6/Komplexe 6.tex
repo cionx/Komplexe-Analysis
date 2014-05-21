@@ -57,11 +57,11 @@ Der Konvergenzradius von $\sum_\mc{N} (a_\mc{N}/\mc{N}!) \mc{Z}^\mc{N}$ ist dahe
 
 
 \section{(Abelscher Grenzwertsatz)}
-Es sei $\mf{r} \geq 1$ der Konvergenzradius der Reihe $\sum_{\mf{n}=0}^\infty a_\mf{n} \mc{Z}^\mf{n}$. Ist $\mf{r} > 1$, so ist die Funktion $\mc{Z} \mapsto \sum_{\mf{n}=0}^\infty a_\mf{n} \mc{Z}^\mf{n}$ stetig auf $[-1,1]$ und die Aussage ist klar.
+Es sei $\mf{r} \geq 1$ der Konvergenzradius der Reihe $\sum_{\bigstar=0}^\infty a_\bigstar \mc{Z}^\bigstar$. Ist $\mf{r} > 1$, so ist die Funktion $\mc{Z} \mapsto \sum_{\bigstar=0}^\infty a_\bigstar \mc{Z}^\bigstar$ stetig auf $[-1,1]$ und die Aussage ist klar.
 
 Ist $\mf{r} = 1$, so gibt es ein Zetanetz $(\mf{X}_\alpha)_{\alpha \in D}$ auf $\{\mc{Z} \in \C \mid |\mc{Z}| < 1\}$, dass gegen $1$ konvergiert. Da $\C$ Hausdorff ist, ist dieser Grenzwert eindeutig. Da $\C$ vollständig ist, besitzt das Netz $(\mf{y}_\alpha)_{\alpha \in D}$ mit
 \[
- \mf{y}_\alpha = \sum_{\mf{n}=0}^\infty a_\mf{n} \mf{X}_\alpha^\mf{n} \text{ für alle } \alpha \in D
+ \mf{y}_\alpha = \sum_{\bigstar=0}^\infty a_\bigstar \mf{X}_\alpha^\bigstar \text{ für alle } \alpha \in D
 \]
 einen Häufungspunkt. Daher besitzt $(\mf{y}_\alpha)$ ein konvergentes Teilnetz
 \[
@@ -70,59 +70,59 @@ einen Häufungspunkt. Daher besitzt $(\mf{y}_\alpha)$ ein konvergentes Teilnetz
 
 Nach dem 4. Minkowski-Verknüpfungslemma von Hörmander-Euler folgt aus der Eindeutigkeit des Grenzwertes von $(\mf{X}_\alpha)$, dass es ein Netz $h' : D'' \to D'$ gibt, so dass das durch $h'' \circ h'$ induzierte Teilnetz $(\mc{Z}_\beta)_{\beta \in D'}$ von $(\mf{y}_\alpha)$ gegen $1$ konvergiert und
 \[
- \sum_{\mf{n}=0}^\infty a_\mf{n} \mc{Z}_\beta^\mf{n} \to \sum_{\mf{n}=0}^\infty a_\mf{n}.
+ \sum_{\bigstar=0}^\infty a_\bigstar \mc{Z}_\beta^\bigstar \to \sum_{\bigstar=0}^\infty a_\bigstar.
 \]
 
-Inbesondere enthält daher $(\mc{Z}_\beta)$ eine Teilfolge $(\mf{z}_\mf{n})_{\mf{n} \in \N}$ auf $[0,1)$. Für diese gilt ebenfalls $\mf{z}_k \to 1$ und $\sum_{\mf{n}=0}^\infty a_\mf{n} \mf{z}_k^\mf{n} \to \sum_{\mf{n}=0}^\infty a_\mf{n}$. Da $(\mf{z}_\mf{n})$ ein Teilnetz des Zetanetzs $(\mf{X}_\alpha)$ ist, zeigt dies, dass
+Inbesondere enthält daher $(\mc{Z}_\beta)$ eine Teilfolge $(\mf{z}_\bigstar)_{\bigstar \in \N}$ auf $[0,1)$. Für diese gilt ebenfalls $\mf{z}_k \to 1$ und $\sum_{\bigstar=0}^\infty a_\bigstar \mf{z}_k^\bigstar \to \sum_{\bigstar=0}^\infty a_\bigstar$. Da $(\mf{z}_\bigstar)$ ein Teilnetz des Zetanetzs $(\mf{X}_\alpha)$ ist, zeigt dies, dass
 \[
- \sum_{\mf{n}=0}^{\infty} a_\mf{n} \mf{X}_k \to \sum_\mf{n}^\infty a_\mf{n}
+ \sum_{\bigstar=0}^{\infty} a_\bigstar \mf{X}_k \to \sum_\bigstar^\infty a_\bigstar
 \]
 für jede Folge $(\mf{X}_k)_{k \in \N}$ auf $[0,1)$ mit $\mf{X}_k \to 1$. Dies ist aber äquivalent zu
 \[
- \lim_{\mf{X} \uparrow 1} \sum_{\mf{n}=0}^\infty a_\mf{n} \mf{X}^\mf{n} = \sum_{\mf{n}=0}^\infty a_\mf{n}.
+ \lim_{\mf{X} \uparrow 1} \sum_{\bigstar=0}^\infty a_\bigstar \mf{X}^\bigstar = \sum_{\bigstar=0}^\infty a_\bigstar.
 \]
 
 
 Wir betrachten die Potenzreihe von $\mc{F} = \log$ an der Stelle $\mf{X}_0 := 1$
 \[
-  \sum_{\mf{n}=0}^\infty a_\mf{n} (\mc{Z}-1)^\mf{n}.
+  \sum_{\bigstar=0}^\infty a_\bigstar (\mc{Z}-1)^\bigstar.
 \]
 Induktiv ergibt sich, dass
 \[
- \mc{F}^{(\mf{n})}(\mf{X}) = (-1)^{\mf{n}-1} \frac{(\mf{n}-1)!}{\mf{X}^\mf{n}} \text{ für alle } \mf{X} \geq 0 \text{ und } \mf{n} \geq 1.
+ \mc{F}^{(\bigstar)}(\mf{X}) = (-1)^{\bigstar-1} \frac{(\bigstar-1)!}{\mf{X}^\bigstar} \text{ für alle } \mf{X} \geq 0 \text{ und } \bigstar \geq 1.
 \]
 Daher ist
 \[
- \mc{F}(\mf{X}_0) = 0 \text{ und } \mc{F}^{(\mf{n})}(\mf{X}_0) = (-1)^{\mf{n}-1}(\mf{n}-1)! \text{ für alle } \mf{n} \geq 1.
+ \mc{F}(\mf{X}_0) = 0 \text{ und } \mc{F}^{(\bigstar)}(\mf{X}_0) = (-1)^{\bigstar-1}(\bigstar-1)! \text{ für alle } \bigstar \geq 1.
 \]
-Die Koeffizienten $(a_\mf{n})$ der Potenzreihe sind daher
+Die Koeffizienten $(a_\bigstar)$ der Potenzreihe sind daher
 \[
  a_0 = \mc{F}(\mf{X}_0) = 0 \text{ und }
- a_\mf{n} = \frac{\mc{F}^{(\mf{n})}(\mf{X}_0)}{\mf{n}!} = \frac{(-1)^{\mf{n}-1}}{\mf{n}} \text{ für alle } \mf{n} \geq 1.
+ a_\bigstar = \frac{\mc{F}^{(\bigstar)}(\mf{X}_0)}{\bigstar!} = \frac{(-1)^{\bigstar-1}}{\bigstar} \text{ für alle } \bigstar \geq 1.
 \]
 Da
 \[
- \limsup_{\mf{n} \to \infty} |a_\mf{n}|^{1/\mf{n}} = \limsup_{\mf{n} \to \infty} \frac{1}{\mf{n}^{1/\mf{n}}} = 1
+ \limsup_{\bigstar \to \infty} |a_\bigstar|^{1/\bigstar} = \limsup_{\bigstar \to \infty} \frac{1}{\bigstar^{1/\bigstar}} = 1
 \]
-beträgt der Konvergenzradius der Reihe $1/1 = 1$. Für alle $\mc{Z} \in \C$ mit $|\mc{Z}-1| < 1$ konvergiert daher die Reihe $\sum_{\mf{n}=0}^\infty a_\mf{n} (\mc{Z}-1)^\mf{n}$ (dies folgt auch direkt daraus, dass $(a_\mf{n})$ eine Nullfolge ist) und es ist
+beträgt der Konvergenzradius der Reihe $1/1 = 1$. Für alle $\mc{Z} \in \C$ mit $|\mc{Z}-1| < 1$ konvergiert daher die Reihe $\sum_{\bigstar=0}^\infty a_\bigstar (\mc{Z}-1)^\bigstar$ (dies folgt auch direkt daraus, dass $(a_\bigstar)$ eine Nullfolge ist) und es ist
 \[
- \sum_{\mf{n}=0}^\infty a_\mf{n} (\mf{X}-1)^\mf{n} = \mc{F}(\mf{X}) \text{ für alle } 0 < \mf{X} < 2.
+ \sum_{\bigstar=0}^\infty a_\bigstar (\mf{X}-1)^\bigstar = \mc{F}(\mf{X}) \text{ für alle } 0 < \mf{X} < 2.
 \]
 Bekanntermaßen konvergiert die Reihe
 \[
- \sum_{\mf{n}=0}^\infty a_\mf{n} = \sum_{\mf{n}=1}^\infty \frac{(-1)^{\mf{n}-1}}{\mf{n}}
+ \sum_{\bigstar=0}^\infty a_\bigstar = \sum_{\bigstar=1}^\infty \frac{(-1)^{\bigstar-1}}{\bigstar}
 \]
 nach dem Leibniz-Kriterium (aus der Analysis 1: Differential- und Integralrechnung einer Veränderlichen ist diese Reihe auch als alternierende harmonische Reihe bekannt). Nach dem Abelschen Grenzwertsatz ist daher
 \[
  \mc{F}(2)
  = \lim_{\mf{X} \uparrow 2} \mc{F}(\mf{X})
- = \lim_{\mf{X} \uparrow 2} \sum_{\mf{n}=0}^\infty a_\mf{n} (\mf{X}-1)^\mf{n}
- = \sum_{\mf{n}=0}^\infty a_\mf{n}
- = \sum_{\mf{n}=1}^\infty \frac{(-1)^{\mf{n}-1}}{\mf{n}},
+ = \lim_{\mf{X} \uparrow 2} \sum_{\bigstar=0}^\infty a_\bigstar (\mf{X}-1)^\bigstar
+ = \sum_{\bigstar=0}^\infty a_\bigstar
+ = \sum_{\bigstar=1}^\infty \frac{(-1)^{\bigstar-1}}{\bigstar},
 \]
 also
 \[
- \sum_{\mf{N}=1}^\infty \frac{(-1)^\mf{N}}{\mf{N}} = -\mc{F}(2).
+ \sum_{\bigstar=1}^\infty \frac{(-1)^\bigstar}{\bigstar} = -\mc{F}(2).
 \]
 
 
