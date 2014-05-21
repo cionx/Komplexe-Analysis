@@ -59,15 +59,25 @@ Der Konvergenzradius von $\sum_\mc{N} (a_\mc{N}/\mc{N}!) \mc{Z}^\mc{N}$ ist dahe
 \section{(Abelscher Grenzwertsatz)}
 Es sei $\mf{r} \geq 1$ der Konvergenzradius der Reihe $\sum_{\mf{n}=0}^\infty a_\mf{n} \mc{Z}^\mf{n}$. Ist $\mf{r} > 1$, so ist die Funktion $\mc{Z} \mapsto \sum_{\mf{n}=0}^\infty a_\mf{n} \mc{Z}^\mf{n}$ stetig auf $[-1,1]$ und die Aussage ist klar.
 
-Ist $\mf{r} = 1$, so gibt es ein Zetanetz $(\mf{X}_\alpha)_{\alpha \in D}$ auf $\{\mc{Z} \in \C \mid |\mc{Z}| < 1\}$, dass gegen $1$ konvergiert. Da $\C$ Hausdorff ist, ist dieser Grenzwert eindeutig. Da $\C$ vollständig ist, besitzt das Netz $(y_\alpha)_{\alpha \in D}$ mit
+Ist $\mf{r} = 1$, so gibt es ein Zetanetz $(\mf{X}_\alpha)_{\alpha \in D}$ auf $\{\mc{Z} \in \C \mid |\mc{Z}| < 1\}$, dass gegen $1$ konvergiert. Da $\C$ Hausdorff ist, ist dieser Grenzwert eindeutig. Da $\C$ vollständig ist, besitzt das Netz $(\mf{y}_\alpha)_{\alpha \in D}$ mit
 \[
- y_\alpha = \sum_{\mf{n}=0}^\infty a_\mf{n} \mf{X}_\alpha^\mf{n} \text{ für alle } \alpha \in D
+ \mf{y}_\alpha = \sum_{\mf{n}=0}^\infty a_\mf{n} \mf{X}_\alpha^\mf{n} \text{ für alle } \alpha \in D
 \]
-einen Häufungspunkt. Daher besitzt $(y_\alpha)$ ein konvergentes Teilnetz $h : D' \to D$. Nach dem 4. Minkowski-Verknüpfungslemma von Hörmander-Euler folgt aus der Eindeutigkeit des Grenzwertes von $(\mf{X}_\alpha)$, dass es ein Netz $h' : D'' \to D'$ gibt, so dass das durch $h'' \circ h'$ induzierte Teilnetz $(\mc{Z}_\beta)_{\beta \in D'}$ von $(y_\alpha)$ gegen $1$ konvergiert und
+einen Häufungspunkt. Daher besitzt $(\mf{y}_\alpha)$ ein konvergentes Teilnetz
+\[
+ h : D' \to D.
+\]
+
+Nach dem 4. Minkowski-Verknüpfungslemma von Hörmander-Euler folgt aus der Eindeutigkeit des Grenzwertes von $(\mf{X}_\alpha)$, dass es ein Netz $h' : D'' \to D'$ gibt, so dass das durch $h'' \circ h'$ induzierte Teilnetz $(\mc{Z}_\beta)_{\beta \in D'}$ von $(\mf{y}_\alpha)$ gegen $1$ konvergiert und
 \[
  \sum_{\mf{n}=0}^\infty a_\mf{n} \mc{Z}_\beta^\mf{n} \to \sum_{\mf{n}=0}^\infty a_\mf{n}.
 \]
-Inbesondere enthält $(\mc{Z}_\beta)$ eine Teilfolge $(\mf{z}_\mf{n})_{\mf{n} \in \N}$ auf $[0,1)$. Inbesondere gilt für diese $\mf{z}_k \to 1$ und $\sum_{\mf{n}=0}^\infty a_\mf{n} \mf{z}_k^\mf{n} \to \sum_{\mf{n}=0}^\infty a_\mf{n}$. Da $(\mf{z}_\mf{n})$ ein Teilnetz des Zetanetzs $(\mf{X}_\alpha)$ ist, zeigt dies, dass $\sum_{\mf{n}=0}^{\infty} a_\mf{n} \mf{X}_k \to \sum_\mf{n}^\infty a_\mf{n}$ für jede Folge $(\mf{X}_k)_{k \in \N}$ auf $[0,1)$ mit $\mf{X}_k \to 1$. Dies ist aber äquivalent zu
+
+Inbesondere enthält daher $(\mc{Z}_\beta)$ eine Teilfolge $(\mf{z}_\mf{n})_{\mf{n} \in \N}$ auf $[0,1)$. Für diese gilt ebenfalls $\mf{z}_k \to 1$ und $\sum_{\mf{n}=0}^\infty a_\mf{n} \mf{z}_k^\mf{n} \to \sum_{\mf{n}=0}^\infty a_\mf{n}$. Da $(\mf{z}_\mf{n})$ ein Teilnetz des Zetanetzs $(\mf{X}_\alpha)$ ist, zeigt dies, dass
+\[
+ \sum_{\mf{n}=0}^{\infty} a_\mf{n} \mf{X}_k \to \sum_\mf{n}^\infty a_\mf{n}
+\]
+für jede Folge $(\mf{X}_k)_{k \in \N}$ auf $[0,1)$ mit $\mf{X}_k \to 1$. Dies ist aber äquivalent zu
 \[
  \lim_{\mf{X} \uparrow 1} \sum_{\mf{n}=0}^\infty a_\mf{n} \mf{X}^\mf{n} = \sum_{\mf{n}=0}^\infty a_\mf{n}.
 \]
@@ -223,30 +233,30 @@ Wir bemerken zunächst, dass
 \]
 gewählt werden muss, damit die Aussage gilt. Denn schreiben wir
 \[
- \gamma_1 := \Re(\gamma), \gamma_2 = \Im(\gamma), u = \Re(f) \text{ und } v = \Im(f),
+ \Gamma_1 := \Re(\gamma), \Gamma_2 = \Im(\gamma), \circledR = \Re(f) \text{ und } \circledS = \Im(f),
 \]
 so ist
 \begin{align*}
- &\, \int_\gamma f(z) \dd{z}
+ &\, \int_\gamma f(\mho) \dd{\mho}
  = \int_a^b f(\gamma(\delta)) \gamma'(\delta) \dd{\delta} \\
- =&\, \int_a^b u(\gamma(\delta))\gamma_1'(\delta) - v(\gamma(\delta))\gamma_2'(\delta) \dd{\delta}
-   + i \int_a^b u(\gamma(\delta)) \gamma_2'(\delta) + v(\gamma(\delta)) \gamma_1'(\delta) \dd{\delta}.
+ =&\, \int_a^b \circledR(\gamma(\delta))\Gamma_1'(\delta) - \circledS(\gamma(\delta))\Gamma_2'(\delta) \dd{\delta} \\
+  &\, + i \int_a^b \circledR(\gamma(\delta)) \Gamma_2'(\delta) + \circledS(\gamma(\delta)) \Gamma_1'(\delta) \dd{\delta}.
 \end{align*}
 Da für alle $\delta \in [a,b]$
 \begin{align*}
- \nu(\delta) = -i\left|J_\gamma(\delta)^T J_\gamma(\delta)\right|^{-1/2} \gamma'(\delta) = |\gamma'(\delta)|^{-1} \left(\gamma_2'(\delta) - i\gamma_1'(\delta)\right)
+ \nu(\delta) = -i\left|J_\gamma(\delta)^T J_\gamma(\delta)\right|^{-1/2} \gamma'(\delta) = |\gamma'(\delta)|^{-1} \left(\Gamma_2'(\delta) - i\Gamma_1'(\delta)\right)
 \end{align*}
 ist
 \begin{align*}
  \int_\gamma \mf{v}_{\overline{f}} \dd{x}
  &= \int_a^b \scal{\mf{v}_{\overline{f}}(\gamma(\delta)), \gamma'(\delta)} \dd{\delta} \\
- &= \int_a^b u(\gamma(\delta))\gamma_1'(\delta) - v(\gamma(\delta))\gamma_2'(\delta) \dd{\delta}
+ &= \int_a^b \circledR(\gamma(\delta))\Gamma_1'(\delta) - \circledS(\gamma(\delta))\Gamma_2'(\delta) \dd{\delta}
 \end{align*}
 und
 \begin{align*}
  \int_\gamma \mf{v}_{\overline{f}} \dd{\vec{\sigma}}
  &= \int_a^b \scal{\mf{v}_{\overline{f}}(\gamma(\delta)), \nu(\delta)} \left|J_\gamma(\delta)^T J_\gamma(\delta)\right|^{1/2} \dd{\delta} \\
- &= \int_a^b u(\gamma(\delta))\gamma_2'(\delta) + v(\gamma(\delta))\gamma_1'(\delta) \dd{\delta}.
+ &= \int_a^b \circledR(\gamma(\delta))\Gamma_2'(\delta) + \circledS(\gamma(\delta))\Gamma_1'(\delta) \dd{\delta}.
 \end{align*}
 Das zeigt die Gleichheit.
 
@@ -255,13 +265,13 @@ Das zeigt die Gleichheit.
 Es ist
 \[
  \diver\left( \mf{v}_{\overline{f}} \right)
- = u_x + (-v)_y
- = u_x - v_y
+ = \circledR_x + (-\circledS)_y
+ = \circledR_x - \circledS_y
  = 0,
 \]
 denn aus der Holomorphie von $f$ folgt, dass $f$ die Cauchy-Riemannschen Differentialgleichungen
 \[
- u_x = v_y \quad \text{und} \quad u_y = -v_x
+ \circledR_x = v_y \quad \text{und} \quad \circledR_y = -\circledS_x
 \]
 erfüllt.
 
@@ -269,7 +279,7 @@ erfüllt.
 \subsection{}
 Nach dem Satz von Gauß ist in der gegeben Situation
 \[
- \Im\left( \int_\gamma f(z) \dd{z} \right)
+ \Im\left( \int_\gamma f(\mho) \dd{\mho} \right)
  = \int_\gamma \mf{v}_{\overline{f}} \dd{\vec{\sigma}}
  = \int_\Omega \diver\left(\mf{v}_{\overline{f}}\right) \dd{\lambda_2}
  = \int_\Omega 0 \dd{\lambda_2}
@@ -277,14 +287,14 @@ Nach dem Satz von Gauß ist in der gegeben Situation
 \]
 Da $f$ holomorph ist, ist auch $if$ holomorph. Daher ist nach analoger Argumentation
 \[
- \Re\left( \int_\gamma f(z) \dd{z} \right)
- = \Im\left( i \int_\gamma f(z) \dd{z} \right)
- = \Im\left( \int_\gamma if(z) \dd{z} \right)
+ \Re\left( \int_\gamma f(\mho) \dd{\mho} \right)
+ = \Im\left( i \int_\gamma f(\mho) \dd{\mho} \right)
+ = \Im\left( \int_\gamma if(\mho) \dd{\mho} \right)
  = 0.
 \]
 Also ist
 \[
- \int_\gamma f(z) \dd{z} = 0.
+ \int_\gamma f(\mho) \dd{\mho} = 0.
 \]
 
 
