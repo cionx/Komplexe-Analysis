@@ -135,6 +135,31 @@ Es ist klar, dass $\Delta(z_0) = f(z_0)$. $\Delta$ ist stetig an $z_0$, denn $f$
 \end{align*}
 Zusammen zeigt, dies, dass $F$ an $z_0$ komplex differenzierbar ist mit $F'(z_0) = f(z)$. Aus der Beliebigkeit von $z_0 \in U$ folgt, dass $F$ auf $U$ holomorph ist mit $F' = f$. Also besitzt $f$ auf $U$ eine Stammfunktion.
 
+Sei $U \subseteq \C$ nichtleer, offen und konvex. Für $z_1, z_2 \in U$ mit $z_1 = x_1 + iy_1$ und $z_2 = x_2 + iy_2$ und den Weg
+\[
+ \gamma : [0,1] \to U, z_1 + t(z_2 - z_1)
+\]
+ist
+\begin{align*}
+ \int_\gamma \Re(z) \dd{z}
+ &= \int_0^1 \Re(z_1 + t(z_2 - z_1)) (z_2 - z_1) \dd{t} \\
+ &= (z_2 - z_1) \int_0^1 x_1 + t(x_2 - x_1) \dd{t} \\
+ &= (z_2 - z_1) \left( x_1 + \frac{x_2 - x_1}{2} \right) \\
+ &= (z_2 - z_1) \frac{x_1 + x_2}{2}.
+\end{align*}
+
+Seien $x+iy, x'+iy' \in U$ mit $x \neq x'$ und $y \neq y'$, so dass $x'+iy \in U$. Für das von $x+iy$, $x'+iy'$ und $x+iy'$ aufgespannte Dreieck $\Delta$ ergibt sich dann
+\begin{align*}
+  &\, \int_{\partial \Delta} f(z) \dd{z} \\
+ =&\, (x'-x+i(y'-y))\frac{x+x'}{2} + (x-x')\frac{x+x'}{2} + i(y-y')\frac{x+x}{2} \\
+ =&\, i(y'-y) \frac{x+x'}{2} - i(y'-y)x
+ = \frac{i}{2}(y'-y)(x'-x)
+ \neq 0.
+\end{align*}
+Deshalb kann $\Re$ auf $U$ kein Stammfunktion besitzen. Da jede nichtleere offene Menge $U \subseteq \C$ eine nichtleere, offene, konvexe Teilmenge besitzt, besitzt $\Re$ auf keiner nichtleeren offenen Mengen eine Stammfunktion. Daher besitzt auch $\Im$ auf keiner nichtleeren offenen Menge eine Stammfunktion, da wegen $\Re(z) = \Im(-iz)$ sonst auch $\Re$ dort eine Stammfunktion hätte.
+
+
+
 
 
 
