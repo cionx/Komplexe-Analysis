@@ -66,6 +66,32 @@ Es ist
 
 
 \subsection{}
+Ich zeige nur eine schwächere Aussage: Es sei $r > 0$ klein genug, so dass $B_r(z_0) \subseteq U$ und sich $f$ auf $B_r(z_0)$ als Potenzreihe
+\[
+ f(z) = \sum_{n=0}^\infty a_n (z-z_0)^n
+\]
+darstellen lässt. Dann ist auch
+\[
+ f'(z) = \sum_{n=1}^\infty n a_n (z-z_0)^{n-1} \text{ für alle } z \in B_r(z_0),
+\]
+und insbesondere $f'(z_0) = a_1$. Definieren wir für $0 <\rho < r$
+\[
+ \gamma_\rho : [0,1] \to U \text{ als } \gamma(t) := z_0 + \rho e^{2\pi i t} \text{ für alle } t \in [0,1],
+\]
+so ist
+\begin{align*}
+ \oint_{|z-z_0| = \rho} \overline{f(z)} \dd{z}
+ &= \int_0^1 \overline{f(z_0 + \rho e^{2\pi i t})} \cdot 2 \pi i \rho e^{2\pi it} \dd{t} \\
+ &= \int_0^1 \overline{\sum_{n=0}^\infty a_n \left(\rho e^{2\pi i t}\right)^n} \cdot 2 \pi i \rho e^{2\pi i t} \\
+ &= \sum_{n=0}^\infty \overline{a_n} \int_0^1 \overline{\rho e^{2\pi i t}}^n \cdot 2 \pi i \rho e^{2\pi i t} \\
+ &= \sum_{n=0}^\infty \overline{a_n} \int_{\gamma_\rho} \overline{z}^n \dd{z}
+ = \overline{a_1} 2 \pi i \rho^2
+ = 2 \pi i \rho^2 \overline{f'(z_0)}.
+\end{align*}
+Dabei haben wir genutzt, dass die Potenzreihe auf $B_\rho(z_0)$ gleichmäßig konvergiert, und Summe und Integral deshalb vertauscht werden dürfen. Die Werte der einzelnen Wegintegrale ergeben sich aus dem vorherigen Aufgabenteil.
+
+
+
 
 
 
@@ -157,16 +183,6 @@ Seien $x+iy, x'+iy' \in U$ mit $x \neq x'$ und $y \neq y'$, so dass $x'+iy \in U
  \neq 0.
 \end{align*}
 Deshalb kann $\Re$ auf $U$ kein Stammfunktion besitzen. Da jede nichtleere offene Menge $U \subseteq \C$ eine nichtleere, offene, konvexe Teilmenge besitzt, besitzt $\Re$ auf keiner nichtleeren offenen Mengen eine Stammfunktion. Daher besitzt auch $\Im$ auf keiner nichtleeren offenen Menge eine Stammfunktion, da wegen $\Re(z) = \Im(-iz)$ sonst auch $\Re$ dort eine Stammfunktion hätte.
-
-
-
-
-
-
-
-
-
-
 
 
 
