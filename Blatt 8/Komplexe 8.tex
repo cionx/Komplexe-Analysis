@@ -95,6 +95,55 @@ und es gilt
 
 
 
+\section{}
+Wir fixieren zunächst einen Basispunkt $a \in U$. Wegen der Konvexität von $U$ existieren für jedes $z \in \C$ der Weg
+\[
+ \gamma_z : [0,1] \to U \text{ mit } \gamma_z(t) := a + t(z-a) \text{ für alle } t \in [0,1].
+\]
+Wir definieren $F : U \to \C$ durch
+\[
+ F(z) := \int_{\gamma_z} f(z) \dd{z} \text{ für alle } z \in U,
+\]
+und behaupten, dass $F$ auf $U$ eine Stammfunktion von $f$ ist.
+
+Sei $z_0 \in U$ beliebig aber fest. Wir zeigen, dass $F$ an $z_0$ komplex differenzierbar ist mit $F'(z_0) = f(z_0)$. Hierfür definieren wir für alle $z \in \C$ den Weg
+\[
+ \Gamma_z : [0,1] \to U \text{ mit } \Gamma_z(t) := z_0 + t(z-z_0) \text{ für alle } t \in [0,1],
+\]
+der wegen der Konvexität von $U$ wohldefiniert ist. Für alle $z \in U$ ist dann
+\begin{align*}
+ 0
+ &= \int_{\gamma_{z_0} + \Gamma_z - \gamma_z} f(z) \dd{z}
+ = \int_{\gamma_{z_0}} f(z) \dd{z} - \int_{\gamma_z} f(z) \dd{z} + \int_{\Gamma_z} f(z) \dd{z} \\
+ &= F(z_0) - F(z) + \int_0^1 f(z_0 + t(z-z_0))(z-z_0) \dd{t},
+\end{align*}
+also
+\[
+ F(z) = F(z_0) + (z-z_0) \Delta(z),
+\]
+wobei $\Delta : U \to \C$ als
+\[
+ \Delta(z) := \int_0^1 f(z_0 + t(z-z_0)) \dd{t} \text{ für alle } z \in U
+\]
+definiert ist.
+
+Es ist klar, dass $\Delta(z_0) = f(z_0)$. $\Delta$ ist stetig an $z_0$, denn $f$ ist stetig, und für alle $z \in U$ ist
+\begin{align*}
+ |\Delta(z)-\Delta(z_0)|
+ &= \left| \int_0^1 f(z_0+t(z-z_0)) - f(z_0) \dd{t} \right| \\
+ &\leq \max_{0 \leq t \leq 1} |f(z_0+t(z-z_0))-f(z_0)|.
+\end{align*}
+Zusammen zeigt, dies, dass $F$ an $z_0$ komplex differenzierbar ist mit $F'(z_0) = f(z)$. Aus der Beliebigkeit von $z_0 \in U$ folgt, dass $F$ auf $U$ holomorph ist mit $F' = f$. Also besitzt $f$ auf $U$ eine Stammfunktion.
+
+
+
+
+
+
+
+
+
+
 
 
 
