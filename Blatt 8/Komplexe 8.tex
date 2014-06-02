@@ -66,7 +66,7 @@ Es ist
 
 
 \subsection{}
-Ich zeige nur eine schwächere Aussage: Es sei $r > 0$ klein genug, so dass $B_r(z_0) \subseteq U$ und sich $f$ auf $B_r(z_0)$ als Potenzreihe
+Wir zeigen nur eine schwächere Aussage: Es sei $r > 0$ so klein, so dass $B_r(z_0) \subseteq U$ und sich $f$ auf $B_r(z_0)$ als Potenzreihe
 \[
  f(z) = \sum_{n=0}^\infty a_n (z-z_0)^n
 \]
@@ -81,17 +81,16 @@ und insbesondere $f'(z_0) = a_1$. Definieren wir für $0 <\rho < r$
 so ist
 \begin{align*}
  \oint_{|z-z_0| = \rho} \overline{f(z)} \dd{z}
+ &= \int_{\gamma_\rho} \overline{f(z)} \dd{z}
+ = \int_0^1 \overline{f(\gamma(t))}\gamma'(t) \dd{t} \\
  &= \int_0^1 \overline{f(z_0 + \rho e^{2\pi i t})} \cdot 2 \pi i \rho e^{2\pi it} \dd{t} \\
- &= \int_0^1 \overline{\sum_{n=0}^\infty a_n \left(\rho e^{2\pi i t}\right)^n} \cdot 2 \pi i \rho e^{2\pi i t} \\
- &= \sum_{n=0}^\infty \overline{a_n} \int_0^1 \overline{\rho e^{2\pi i t}}^n \cdot 2 \pi i \rho e^{2\pi i t} \\
+ &= \int_0^1 \overline{\sum_{n=0}^\infty a_n \left(\rho e^{2\pi i t}\right)^n} \cdot 2 \pi i \rho e^{2\pi i t} \dd{t}\\
+ &= \sum_{n=0}^\infty \overline{a_n} \int_0^1 \overline{\rho e^{2\pi i t}}^n \cdot 2 \pi i \rho e^{2\pi i t} \dd{t}\\
  &= \sum_{n=0}^\infty \overline{a_n} \int_{\gamma_\rho} \overline{z}^n \dd{z}
- = \overline{a_1} 2 \pi i \rho^2
+ = \overline{a_1} \cdot 2 \pi i \rho^2
  = 2 \pi i \rho^2 \overline{f'(z_0)}.
 \end{align*}
-Dabei haben wir genutzt, dass die Potenzreihe auf $B_\rho(z_0)$ gleichmäßig konvergiert, und Summe und Integral deshalb vertauscht werden dürfen. Die Werte der einzelnen Wegintegrale ergeben sich aus dem vorherigen Aufgabenteil.
-
-
-
+Dabei haben wir genutzt, dass die Potenzreihe auf $\overline{B_\rho(z_0)}$ gleichmäßig konvergiert, und Summe und Integral deshalb vertauscht werden dürfen. Die Werte der einzelnen Wegintegrale ergeben sich aus dem vorherigen Aufgabenteil.
 
 
 
@@ -112,7 +111,7 @@ und es gilt
 \begin{align*}
  \left| \int_\gamma f(z) \dd{z} \right|
  &= \left| \int_a^b f(\gamma(t)) \gamma'(t) \dd{t} \right|
- \leq \int_a^b |f(\gamma(t) \gamma'(t) | \dd{t} \\
+ \leq \int_a^b |f(\gamma(t)) \gamma'(t) | \dd{t} \\
  &\leq M \int_a^b |\gamma'(t)| \dd{t}
  = M L(\gamma).
 \end{align*}
@@ -159,7 +158,7 @@ Es ist klar, dass $\Delta(z_0) = f(z_0)$. $\Delta$ ist stetig an $z_0$, denn $f$
  &= \left| \int_0^1 f(z_0+t(z-z_0)) - f(z_0) \dd{t} \right| \\
  &\leq \max_{0 \leq t \leq 1} |f(z_0+t(z-z_0))-f(z_0)|.
 \end{align*}
-Zusammen zeigt, dies, dass $F$ an $z_0$ komplex differenzierbar ist mit $F'(z_0) = f(z)$. Aus der Beliebigkeit von $z_0 \in U$ folgt, dass $F$ auf $U$ holomorph ist mit $F' = f$. Also besitzt $f$ auf $U$ eine Stammfunktion.
+Zusammen zeigt dies, dass $F$ an $z_0$ komplex differenzierbar ist mit $F'(z_0) = f(z_0)$. Aus der Beliebigkeit von $z_0 \in U$ folgt, dass $F$ auf $U$ holomorph ist mit $F' = f$. Also besitzt $f$ auf $U$ eine Stammfunktion.
 
 Sei $U \subseteq \C$ nichtleer, offen und konvex. Für $z_1, z_2 \in U$ mit $z_1 = x_1 + iy_1$ und $z_2 = x_2 + iy_2$ und den Weg
 \[
@@ -174,7 +173,7 @@ ist
  &= (z_2 - z_1) \frac{x_1 + x_2}{2}.
 \end{align*}
 
-Seien $x+iy, x'+iy' \in U$ mit $x \neq x'$ und $y \neq y'$, so dass $x'+iy \in U$. Für das von $x+iy$, $x'+iy'$ und $x+iy'$ aufgespannte Dreieck $\Delta$ ergibt sich dann
+Seien $x+iy, x'+iy' \in U$ mit $x \neq x'$ und $y \neq y'$, so dass $x'+iy \in U$ (es ist klar, dass solche Punkte existieren). Für das von $x+iy$, $x'+iy'$ und $x+iy'$ aufgespannte Dreieck $\Delta$ ergibt sich dann
 \begin{align*}
   &\, \int_{\partial \Delta} f(z) \dd{z} \\
  =&\, (x'-x+i(y'-y))\frac{x+x'}{2} + (x-x')\frac{x+x'}{2} + i(y-y')\frac{x+x}{2} \\
@@ -182,7 +181,7 @@ Seien $x+iy, x'+iy' \in U$ mit $x \neq x'$ und $y \neq y'$, so dass $x'+iy \in U
  = \frac{i}{2}(y'-y)(x'-x)
  \neq 0.
 \end{align*}
-Deshalb kann $\Re$ auf $U$ kein Stammfunktion besitzen. Da jede nichtleere offene Menge $U \subseteq \C$ eine nichtleere, offene, konvexe Teilmenge besitzt, besitzt $\Re$ auf keiner nichtleeren offenen Mengen eine Stammfunktion. Daher besitzt auch $\Im$ auf keiner nichtleeren offenen Menge eine Stammfunktion, da wegen $\Re(z) = \Im(-iz)$ sonst auch $\Re$ dort eine Stammfunktion hätte.
+Deshalb kann $\Re$ auf $U$ kein Stammfunktion besitzen. Da jede nichtleere offene Menge $U \subseteq \C$ eine nichtleere, offene, konvexe Teilmenge besitzt, besitzt $\Re$ auf keiner nichtleeren offenen Mengen eine Stammfunktion. Daher besitzt auch $\Im$ auf keiner nichtleeren offenen Menge eine Stammfunktion, da wegen $\Re(z) = \Im(-iz)$ sonst auch $\Re$ dort eine Stammfunktion besäße.
 
 
 
