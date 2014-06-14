@@ -17,6 +17,89 @@
 
 
 
+\section{(Stammgebiete und Stammfunktionen)}
+
+
+\subsection{}
+$\C$ ist ein konvexes Gebiet. Daher besitzt, wie auf dem letzten Zettel gezeigt, jede ganze Funktion eine Stammfunktion. Also ist $\C$ ein Stammgebiet.
+
+$\C \setminus \{i\}$ ist kein Stammgebiet, denn
+\[
+ f : \C \setminus \{i\} \to \C^*, z \mapsto \frac{1}{z-i}
+\]
+ist holomorph auf $\C \setminus \{i\}$, aber da
+\[
+ \int_{\del D_1(i)} f(z) \dd{z}
+ = \int_{\del D_1(i)} \frac{1}{z-i} \dd{z}
+ = \int_{\del D_1(0)} \frac{1}{z} \dd{z}
+ = 2 \pi i
+ \neq 0
+\]
+besitzt $f$ auf $\C \setminus \{i\}$ keine Stammfunktion.
+
+
+\subsection{}
+Da $S_1$ und $S_2$ offen sind, ist auch $S_1 \cup S_2$ offen. Es sei $f : S_1 \cup S_2 \to \C$ holomorph. Da $S_1$ ein Stammgebiet ist, besitzt $f_{|S_1} : S_1 \to \C$ eine Stammfunktion $F_1 : S_1 \to \C$. Da $S_2$ ein Stammgebiet ist, besitzt $f_{|S_2} : S_2 \to \C$ eine Stammfunktion $F_2 : S_2 \to \C$. Da
+\[
+ F_{1 | S_1 \cap S_2}' = f_{|S_1 \cap S_2} = F_{2 | S_1 \cap S_2}'
+\]
+und $S_1 \cap S_2$ zusammenhängend ist, gibt es ein $c \in \C$ mit
+\[
+ F_1(z) = F_2(z) \text{ für alle } z \in S_1 \cap S_2.
+\]
+Es ist daher
+\[
+ F : S_1 \cup S_2 \to \C,
+ z \mapsto \begin{cases} F_1(z) & \text{ falls } z \in S_1 \\ F_2(z) + c \text{ falls } z \in S_2 \end{cases}
+\]
+eine Stammfunktion von $f$ auf $S_1 \cup S_2$.
+
+Es besitzt also jede auf $S_1 \cup S_2$ holomorphe Funkion dort auch eine Stammfunktion. Ist zusätzlich $S_1 \cap S_2 \neq \emptyset$, so ist $S_1 \cup S_2$ auch zusammenhängend und daher ein Stammgebiet.
+
+Wir betrachten weiter die Gebiete
+\begin{align*}
+ R^+ &:= \{z \in \C \mid \Re(z) > 0\}, \\
+ R^- &:= \{z \in \C \mid \Re(z) < 0\}, \\
+ I^+ &:= \{z \in \C \mid \Im(z) > 0\} \text{ und } \\
+ I^- &:= \{z \in \C \mid \Im(z) < 0\}.
+\end{align*}
+Diese sind konvex und somit Stammgebiete. Da
+\begin{align*}
+ R^+ \cap R^- &= \{z \in \C \mid \Re(z) > 0 \text{ oder } \Im(z) > 0\} \text{ und } \\
+ I^+ \cap I^- &= \{z \in \C \mid \Re(z) < 0 \text{ oder } \Im(z) < 0\}
+\end{align*}
+nichtleer und zusammenhängend sind, sind $R^+ \cup I^+$ und $R^- \cup I^-$ Stammgebiete. Es ist jedoch
+\begin{align*}
+  &\, (R^+ \cup I^+) \cap (R^- \cap I^-) \\
+ =&\,  \{z \in \C \mid \Re(z) > 0, \Im(z) < 0 \text{ oder } \Re(z) < 0, \Im(z) > 0\}
+\end{align*}
+nicht zusammenhängend und das Gebiet
+\[
+ (R^+ \cup I^+) \cup (R^- \cup I^-) = \C^*
+\]
+ist kein Stammgebiet. (Denn die Funktion
+\[
+ f : \C^* \to \C^*, z \mapsto \frac{1}{z}
+\]
+ist auf $\C^*$ holomorph, besitzt wegen
+\[
+ \int_{\del D_1(0)} f(z) \dd{z}
+ = \int_{\del D_1(0)} \frac{1}{z} \dd{z}
+ = 2 \pi i
+\]
+keine Stammfunktion auf $\C^*$.)
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
