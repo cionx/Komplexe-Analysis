@@ -168,6 +168,126 @@ Wegen der Beliebigkeit von $\Delta$ ist $f$ nach dem Satz von Morera holomorph.
 
 
 
+\section{(Identitätssatz für holomorphe Funktionen)}
+
+
+\subsection{}
+Es ergibt sich induktiv, dass
+\[
+ f^{(n)}(0) = a^n f(0) \text{ für alle } n \in \N.
+\]
+Für die ganze Funktion
+\[
+ g : \C \to \C, z \mapsto f(0) e^{az}
+\]
+mit $g(0) = f(0)$ ist daher
+\[
+ g^{(n)}(0) = a^n g(0) = a^n f(0) = f^{(n)}(0) \text{ für alle } n \in \N.
+\]
+Nach dem Identitätssatz ist daher bereits $f = g$.
+
+
+\subsection{}
+Wir zeigen zuerst die Existenz und dann die Eindeutigkeit einer entsprechenden Abbildung.
+
+Für alle $m \in \N$ definieren wir rekursiv
+\[
+ b_{n+1+m} := \sum_{k=0}^n a_k b_{k+m},
+\]
+wobei $b_0, \ldots, b_n$ bereits gegeben sind, und für alle $m \in \N$ setzen wir
+\[
+ c_m := \frac{b_m}{m!}.
+\]
+Wir setzen
+\[
+ M_a := \max \{ |a_0|, \ldots, |a_n|, 1 \} \text{ und }
+ M_b := \max \{ |b_0|, \ldots, |b_n|, 1 \}.
+\]
+Induktiv erhalten wir, dass
+\[
+ |b_k| \leq (n+1)^k M_a^k M_b.
+\]
+Für $k = 0, \ldots, n$ ist die Aussage klar. Gilt die Aussage für $b_0, \ldots, b_n, b_{n+1}, \ldots, b_{n+m}$, so ist
+\begin{align*}
+ |b_{n+1+m}|
+ &= \left| \sum_{k=0}^n a_k b_{k+m} \right|
+ \leq \sum_{k=0}^n |a_k| |b_{k+m}| \\
+ &\leq M_a \sum_{k=0}^n |b_{k+m}|
+ \underset{\text{IV}}\leq M_a \sum_{k=0}^n (n+1)^{k+m} M_a^{k+m} M_b \\
+ &\leq M_a \cdot (n+1) (n+1)^{n+m} M_a^{n+m} M_b \\
+ &= (n+1)^{n+1+m} M_a^{n+1+m} M_b.
+\end{align*}
+
+Da damit
+\begin{align*}
+ \limsup_{k \to \infty} |c_k|^{1/k}
+ &= \limsup_{k \to \infty} \frac{|b_k|^{1/k}}{(k!)^{1/k}} \\
+ &\leq \limsup_{k \to \infty} \frac{(n+1) M_a M_b^{1/(n+1+k)}}{((n+1+k)!)^{1/(n+1+k)}}
+ = 0,
+\end{align*}
+ist $\limsup_{k \to \infty} |c_k|^{1/k} = 0$. Deshalb konvergiert die Potenzreihe $\sum_{k=0}^\infty c_k z^k$ auf ganz $\C$, die Funktion
+\[
+ f : \C \to \C, z \mapsto \sum_{k=0}^\infty c_k z^k
+\]
+ist als ganz. Es ist klar, dass
+\[
+ f^{(k)}(0) = b_k \text{ für alle } k \in \N.
+\]
+Für die ganze Funktion $g : \C \to \C$ definiert als
+\[
+ g := f^{(n+1)} - \sum_{k=0}^n a_k f^{(k)}
+\]
+ist daher für alle $m \in \N$
+\[
+ g^{(m)}(0)
+ = f^{(n+1+m)}(0) - \sum_{k=0}^n a_k f^{(k+m)}(0)
+ = b_{n+1+m} - \sum_{k=0}^n a_k b_{k+m}
+ = 0.
+\]
+Nach dem Identitätssatz ist daher $g = 0$, also
+\[
+ f^{(n+1)} = \sum_{k=0}^n a_k f^{(k)}
+\]
+Dies zeigt die Existenz einer entsprechenden Abbildung.
+
+Zum Beweis der Eindeutigkeit sei $\tilde{f} : \C \to \C$ eine weitere ganze Funktion mit $\tilde{f}^{(k)} = b_k$ für alle $k = 0, \ldots, n$ und
+\[
+ \tilde{f}^{(n+1)} = \sum_{k=0}^n a_k \tilde{f}^{(k)}.
+\]
+Da damit für alle $m \in \N$
+\[
+ \tilde{f}^{(n+1+m)} = \sum_{k=0}^n a_k \tilde{f}^{(k+m)}
+\]
+ergibt sich induktiv, dass $\tilde{f}^{(k)}(0) = f^{(k)}(0)$ für alle $k \in \N$. Wegen des Identitätssatzes folgt daraus, dass $\tilde{f} = f$.
+
+
+\subsection{}
+Die Funktion
+\[
+ f^* : \C \to \C, z \mapsto \overline{f(\overline{z})}
+\]
+ist ganz, da für alle $z \in \C$
+\begin{align*}
+ \lim_{h \to 0} \frac{f^*(z+h)-f^*(z)}{h}
+ &= \lim_{h \to 0} \frac{\overline{f(\overline{z}+\overline{h})-f(\overline{z})}}{h} \\
+ &= \overline{ \lim_{h \to 0} \frac{f(\overline{z}+\overline{h})-f(\overline{z})}{\overline{h}} }
+ = \overline{f'(\overline{z})}.
+\end{align*}
+Da $f^*(x) = \overline{f(\overline{x})} = f(x)$ für alle $x \in \R$, und $\R$ nicht diskret ist, ist nach dem Identitätssatz bereits $f^* = f$, und deshalb
+\[
+ f(\overline{z}) = \overline{f(z)} \text{ für alle } z \in \C.
+\]
+
+
+
+
+
+
+
+
+
+
+
 
 
 
