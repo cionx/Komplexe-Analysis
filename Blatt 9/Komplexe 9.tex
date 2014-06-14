@@ -93,6 +93,75 @@ keine Stammfunktion auf $\C^*$.)
 
 
 
+\section{}
+
+
+
+
+
+\begin{lem}
+ Sei $U \subseteq \C$ offen, $\alpha : [0,1] \to U$ eine stückweise stetig differenzierbare Kurve. Es sei $f_n : |\alpha| \to \C$ eine Folge stetiger Funktionen, die auf $|\alpha|$ lokal gleichmäßig gegen $f : |\alpha| \to \C$ konvergiert. Dann ist
+ \[
+  \int_\alpha f(z) \dd{z} = \lim_{n \to \infty} \int_\alpha f_n(z) \dd{z}.
+ \]
+\end{lem}\label{lem: Wegintegral und Grenzwert vertauschen}
+\begin{proof}
+ Wir betrachten zunächst den Fall, dass $\alpha$ stetig differenzierbar ist und $f_n$ auf $|\alpha|$ gleichmäßig gegen $f$ konvergiert. Da $\alpha$ stetig differenzierbar ist, gibt es wegen der Kompaktheit von $[0,1]$ ein $C > 0$ mit $|\alpha'(t)| < C$ für alle $t \in [0,1]$. Sei $\varepsilon > 0$ beliebig aber fest. Da $f_n$ auf $|\alpha|$ gleichmäßig gegen $f$ konvergiert, gibt es $N \in \N$ mit
+ \[
+  |f(z)-f_n(z)| \leq \frac{\varepsilon}{C} \text{ für alle } n \geq N, z \in |\alpha|.
+ \]
+ Daher ist
+ \[
+  |f(\alpha(t))\alpha'(t) - f_n(\alpha(t))\alpha'(t)| \leq \varepsilon \text{ für alle } n \geq N, t \in [0,1].
+ \]
+ Das zeigt, dass $(f_n \circ \alpha) \alpha'$ auf $[0,1]$ gleichmäßig gegen $(f \circ \alpha) \alpha'$ konvergiert. Daher ist
+ \begin{align*}
+  \int_\alpha f(z) \dd{z}
+  &= \int_0^1 f(\alpha(t)) \alpha'(t) \dd{t}
+  = \int_0^1 \lim_{n \to \infty} f_n(\alpha(t)) \alpha'(t) \dd{t} \\
+  &= \lim_{n \to \infty} \int_0^1 f_n(\alpha(t)) \alpha'(t) \dd{t}
+  = \lim_{n \to \infty} \int_\alpha f_n(z) \dd{z}.
+ \end{align*}
+
+Wir betrachten nun den Fall, dass $\alpha$ stetig differenzierbar ist, und $f_n$ auf $|\alpha|$ lokal gleichmäßig gegen $f$ konvergiert. Dann gibt es für jeden Punkt $z \in |\alpha|$ eine offene Umgebung $U_z \subseteq U$ von $z$, so dass $f_n$ auf $U_z \cap |\alpha|$ gleichmäßig gegen $f$ konvergiert. Wegen der Kompaktkeit von $|\alpha|$ hat die offene Überdeckung $\{U_z \mid z \in |\alpha|\}$ von $|\alpha|$ eine endliche Teilüberdeckung. Es gibt also $V_1, \ldots, V_n \in \{U_z \mid z \in |\alpha|\}$, so dass
+\[
+ |\alpha| \subseteq V_1 \cup \ldots \cup V_n.
+\]
+und $f_n$ für alle $k = 1, \ldots, n$ auf $V_k \cap |\alpha|$ gleichmäßig gegen $f$ konvergiert. Wegen der Endlichkeit dieser Überdeckung konvergiert $f_n$ auch auf
+\[
+ (V_1 \cap |\alpha|) \cup \ldots \cup (V_n \cap |\alpha|)
+ = (V_1 \cup \ldots \cup V_n) \cap |\alpha|
+ = |\alpha|
+\]
+gleichmäßig gegen $f$. Die Aussage ergibt sich daher aus dem vorherigen Fall.
+
+Zuletzt betrachten wir den Fall, dass $\alpha$ stückweise stetig differenzierbar ist und $f_n$ auf $|\alpha|$ lokal gleichmäßig gegen $f$ konvergiert. Dann gibt es stetig differenzierbare Wege $\beta_1, \ldots, \beta_m : [0,1] \to \C$, so dass $\alpha = \beta_1 + \ldots + \beta_m$. Da $(f_n)$ auf $|\alpha|$ lokal gleichmäßig gegen $f$ konvergiert, konvergiert $(f_n)$ für alle $k = 1, \ldots, m$ auch auf $|\beta_k|$ lokal gleichmäßig gegen $f$. Daher ist nach dem vorherigen Fall
+\begin{align*}
+ \int_\alpha f(z) \dd{z}
+ &= \sum_{k=1}^m \int_{\beta_k} f(z) \dd{z}
+ = \sum_{k=1}^m \lim_{n \to \infty} \int_{\beta_k} f_n(z) \dd{z} \\
+ &= \lim_{n \to \infty} \sum_{k=1}^m \int_{\beta_k} f_n(z) \dd{z}
+ = \lim_{n \to \infty} \int_\alpha f_n(z) \dd{z}.
+\end{align*}
+\end{proof}
+
+Sei $\Delta \subseteq U$ ein abgeschlossenen Dreieck. Da die $f_n$ alle holomorph sind ist nach dem Lemma von Goursat
+\[
+ \int_{\del \Delta} f_n(z) \dd{z} = 0 \text{ für alle } n \in \N.
+\]
+Daher ist nach Lemma \ref{lem: Wegintegral und Grenzwert vertauschen} auch
+\[
+ \int_{\del \Delta} f(z) \dd{z}
+ = \lim_{n \to \infty} \int_{\del \Delta} f(z) \dd{z}
+ = 0.
+\]
+Wegen der Beliebigkeit von $\Delta$ ist $f$ nach dem Satz von Morera holomorph.
+
+
+
+
+
+
 
 
 
