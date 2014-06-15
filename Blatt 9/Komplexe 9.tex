@@ -279,6 +279,64 @@ Da $f^*(x) = \overline{f(\overline{x})} = f(x)$ für alle $x \in \R$, und $\R$ n
 \]
 
 
+\section{(Holomorphie parameterabhängiger \\ Integrale)}
+
+Es sei $\beta : [0,1] \to U$ eine stetig differenzierbare Kurve. Da
+\[
+ [a,b] \times [0,1] \to \C, (t,s) \mapsto f(t,\beta(s))\beta'(s)
+\]
+und $F$ stetig sind, ist nach dem Satz von Fubini
+\begin{align*}
+ \int_\beta F(z) \dd{z}
+ &= \int_0^1 F(\beta(s)) \beta'(s) \dd{s}
+ = \int_0^1 \int_a^b f(t,\beta(s)) \beta'(s) \dd{t} \dd{s} \\
+ &= \int_a^b \int_0^1 f(t,\beta(s)) \beta'(s) \dd{s} \dd{t}
+ = \int_a^b \int_\beta f(t,z) \dd{z} \dd{t}.
+\end{align*}
+
+Es sei $\alpha : [0,1] \to U$ eine stückweise stetig differenzierbare Kurve. Dann gibt es stetig differenzierbare Kurven $\beta_1, \ldots, \beta_n : [0,1] \to U$ mit $\alpha = \beta_1 + \ldots + \beta_n$. Es ist daher
+\begin{align*}
+ \int_\alpha F(z) \dd{z}
+ &= \sum_{k=0}^n \int_{\beta_k} F(z) \dd{z}
+ = \sum_{k=0}^n \int_a^b \int_{\beta_k} f(t,z) \dd{z} \dd{t} \\
+ &= \int_a^b \sum_{k=0}^n \int_{\beta_k} f(t,z) \dd{z} \dd{t}
+ = \int_a^b \int_\alpha f(t,z) \dd{z} \dd{t}.
+\end{align*}
+
+Es sei $\Delta \subseteq U$ ein abgeschlossenes Dreieck. Da $f(t,-)$ für alle $t \in [a,b]$ holomorph auf $U$ ist, ist
+\[
+ \int_{\del \Delta} f(t,z) \dd{z} = 0 \text{ für alle } t \in [a,b].
+\]
+Daher ist auch
+\[
+ \int_{\del \Delta} F(z) \dd{z}
+ = \int_a^b \int_{\del \Delta} f(t,z) \dd{z} \dd{t}
+ = \int_a^b 0 \dd{t}
+ = 0.
+\]
+Aus der Beliebigkeit von $\Delta$ folgt aus dem Satz von Morera, dass $F$ holomorph auf $U$ ist.
+
+Es sei $z \in U$ beliebig aber fest, $r > 0$, so dass $\overline{D_r(z)} \subseteq U$ und
+\[
+ \alpha : [0,1] \to U, t \mapsto z + re^{2 \pi i t}.
+\]
+Da $\alpha$ stetig differenzierbar ist, ist die Abbildung
+\[
+ [a,b] \times [0,1] \to \C, (t,s) \mapsto \frac{f(t,\alpha(s)) \alpha'(s)}{2 \pi i (\alpha(t)-z)^2}
+\]
+stetig, und somit nach den Cauchy Integralformeln und dem Satz von Fubini
+\begin{align*}
+ F'(z)
+ &= \frac{1}{2 \pi i} \int_{\del D_r(z)} \frac{F(\zeta)}{(\zeta-z)^2} \dd{\zeta}
+ = \frac{1}{2 \pi i } \int_0^1 \frac{F(\alpha(s))\alpha'(s)}{(\alpha(s)-z)^2} \dd{s} \\
+ &= \int_0^1 \int_a^b \frac{f(t,\alpha(s))\alpha'(s)}{2 \pi i (\alpha(s)-z)^2} \dd{t} \dd{s}
+ = \int_a^b \int_0^1 \frac{f(t,\alpha(s))\alpha'(s)}{2 \pi i (\alpha(s)-z)^2} \dd{s} \dd{t} \\
+ &= \int_a^b \frac{1}{2 \pi i} \int_{\del D_r(z)} \frac{f(t,\zeta)}{(\zeta-z)^2} \dd{\zeta} \dd{t}
+ = \int_a^b \partd{f}{z}(t,z) \dd{t}.
+\end{align*}
+
+
+
 
 
 
